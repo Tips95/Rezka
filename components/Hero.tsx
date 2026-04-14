@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, Clock } from "lucide-react";
 
 const highlights = [
   "Резка, обточка и фацет по индивидуальным размерам",
@@ -39,7 +39,7 @@ export default function Hero() {
           </h1>
 
           <p className="text-lg text-zinc-400 leading-relaxed mb-10 max-w-2xl">
-            Мебельное стекло, стеклопакеты, резка и фацет, душевые кабины, 
+            Мебельное стекло, стеклопакеты, резка и фацет, душевые кабины,{" "}
             безрамное остекление, закалка — всё на одном производстве.
           </p>
 
@@ -49,7 +49,7 @@ export default function Hero() {
               className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold px-7 py-3.5 rounded-lg hover:from-blue-600 hover:to-cyan-600 transition-all shadow-lg shadow-blue-500/25"
             >
               Оставить заявку
-              <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
+              <ArrowRight size={16} />
             </Link>
             <Link
               href="/uslugi"
@@ -57,6 +57,12 @@ export default function Hero() {
             >
               Все услуги
             </Link>
+          </div>
+
+          {/* Quick estimate badge */}
+          <div className="inline-flex items-center gap-2 text-sm text-zinc-400 mb-10">
+            <Clock size={14} className="text-blue-400" />
+            Расчёт стоимости за <span className="text-white font-semibold">1 рабочий день</span> — бесплатно
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -79,7 +85,9 @@ export default function Hero() {
             { value: "5.0", label: "рейтинг клиентов" },
           ].map((stat) => (
             <div key={stat.label} className="pl-6 first:pl-0">
-              <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">{stat.value}</div>
+              <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                {stat.value}
+              </div>
               <div className="text-sm text-zinc-500 mt-0.5">{stat.label}</div>
             </div>
           ))}
