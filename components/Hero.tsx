@@ -29,10 +29,10 @@ export default function Hero() {
           </div>
 
           <h1 className="text-4xl lg:text-6xl font-bold leading-tight tracking-tight mb-4">
-            Алюминиевые перголы,{" "}
+            Безрамное остекление{" "}
             <br className="hidden sm:block" />
             <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-              панорамное остекление
+              под ключ
             </span>
           </h1>
 
