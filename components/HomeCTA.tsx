@@ -1,29 +1,28 @@
 import Link from "next/link";
-import { ArrowRight, Phone, Clock } from "lucide-react";
+import { ArrowRight, Phone, Zap } from "lucide-react";
 
 export default function HomeCTA() {
   return (
     <section className="py-24 bg-zinc-900 relative overflow-hidden">
-      {/* Background glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-6">
         <div className="max-w-2xl">
           <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-1.5 text-sm text-blue-400 mb-8">
-            <Clock size={13} />
-            Расчёт стоимости за 1 рабочий день
+            <Zap size={13} />
+            Смета за 1 минуту — бесплатно и без обязательств
           </div>
 
           <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-            Получите смету
+            Рассчитаем стоимость
             <br />
             <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-              бесплатно и без обязательств
+              вашего проекта
             </span>
           </h2>
 
           <p className="text-zinc-400 mb-10 leading-relaxed text-lg">
-            Пришлите размеры, чертёж или просто опишите задачу — наш специалист рассчитает стоимость и ответит на все вопросы.
+            Оставьте заявку — менеджер рассчитает смету, разработает бесплатный 3D-проект и ответит на все вопросы.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
@@ -44,15 +43,14 @@ export default function HomeCTA() {
           </div>
         </div>
 
-        {/* Trust row */}
         <div className="mt-14 pt-10 border-t border-white/10 grid grid-cols-2 sm:grid-cols-3 gap-6">
           {[
-            { value: "Бесплатно", label: "расчёт стоимости" },
-            { value: "1 день", label: "подготовка сметы" },
-            { value: "Без предоплаты", label: "для постоянных клиентов" },
+            { value: "Бесплатный 3D-проект", label: "до начала работ" },
+            { value: "14 дней", label: "проект под ключ" },
+            { value: "5 лет гарантии", label: "официально по договору" },
           ].map((item) => (
             <div key={item.label}>
-              <div className="text-xl font-bold text-white">{item.value}</div>
+              <div className="text-lg font-bold text-white">{item.value}</div>
               <div className="text-sm text-zinc-500 mt-0.5">{item.label}</div>
             </div>
           ))}

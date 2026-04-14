@@ -1,32 +1,32 @@
-import { FileText, UserCheck, Factory, CalendarCheck } from "lucide-react";
+import { ShieldCheck, Factory, Clock, Truck } from "lucide-react";
 
 const stats = [
-  { value: "20+", label: "лет на рынке", sub: "Работаем с 2003 года" },
-  { value: "50 000+", label: "заказов выполнено", sub: "Физлица и компании" },
-  { value: "300+", label: "постоянных клиентов", sub: "Мебельщики, строители, дизайнеры" },
-  { value: "от 1 дня", label: "срок изготовления", sub: "По стандартным размерам" },
+  { value: "13 лет", label: "опыт производства", sub: "Работаем с 2012 года" },
+  { value: "500+", label: "проектов", sub: "Москва, Крым, Краснодар и Европа" },
+  { value: "5 лет", label: "гарантия", sub: "Официально по договору" },
+  { value: "14 дней", label: "срок реализации", sub: "Под ключ с монтажом" },
 ];
 
 const advantages = [
   {
     icon: Factory,
     title: "Собственное производство",
-    desc: "Завод в Домодедово. Полный контроль качества и сроков — без субподрядчиков.",
+    desc: "Полный цикл на нашем заводе. Без субподрядчиков — честные цены и полный контроль качества на каждом этапе.",
   },
   {
-    icon: FileText,
-    title: "Расчёт за 1 день",
-    desc: "Грамотная консультация специалиста и готовая смета в течение одного рабочего дня.",
+    icon: ShieldCheck,
+    title: "Гарантия 5 лет по договору",
+    desc: "Официальная гарантия без скрытых условий и ежегодных платежей. Работаем по ГОСТ Р ISO 9001.",
   },
   {
-    icon: UserCheck,
-    title: "Условия для юрлиц",
-    desc: "Работаем по договору. Персональные условия для мебельных, строительных и дизайнерских компаний.",
+    icon: Clock,
+    title: "Бесплатный 3D-проект",
+    desc: "Разрабатываем визуализацию до начала работ. Вы увидите результат ещё до производства конструкции.",
   },
   {
-    icon: CalendarCheck,
-    title: "Доставка на объект",
-    desc: "Привозим стекло на объект по Москве и области. Упаковка обеспечивает сохранность при транспортировке.",
+    icon: Truck,
+    title: "Доставка и монтаж по России",
+    desc: "Собственные бригады работают по всей России. Сдача объекта в оговорённые сроки под ключ.",
   },
 ];
 
@@ -47,25 +47,21 @@ export default function Advantages() {
           ))}
         </div>
 
-        <div className="flex items-end justify-between mb-10 gap-4 flex-wrap">
-          <div>
-            <p className="text-sm font-medium text-blue-600 mb-3 tracking-wide uppercase">
-              Почему выбирают нас
-            </p>
-            <h2 className="text-3xl lg:text-4xl font-bold text-zinc-900">
-              Вам удобно с нами работать
-            </h2>
-          </div>
+        <div className="mb-10">
+          <p className="text-sm font-medium text-blue-600 mb-3 tracking-wide uppercase">О компании</p>
+          <h2 className="text-3xl lg:text-4xl font-bold text-zinc-900 max-w-xl">
+            Нужен надёжный подрядчик для строительства перголы или остекления?
+          </h2>
+          <p className="text-zinc-500 mt-4 max-w-2xl leading-relaxed">
+            За 13 лет мы реализовали более 500 проектов в Москве, Крыму и Краснодарском крае. Создаём долговечные и стильные алюминиевые конструкции для частных домов, кафе и отелей.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {advantages.map((adv) => {
             const Icon = adv.icon;
             return (
-              <div
-                key={adv.title}
-                className="border border-zinc-100 rounded-2xl p-7 hover:border-zinc-200 hover:shadow-sm transition-all"
-              >
+              <div key={adv.title} className="border border-zinc-100 rounded-2xl p-7 hover:border-zinc-200 hover:shadow-sm transition-all">
                 <div className="w-12 h-12 rounded-xl bg-zinc-900 flex items-center justify-center mb-5">
                   <Icon size={20} className="text-white" />
                 </div>

@@ -1,34 +1,34 @@
 const reviews = [
   {
     name: "Александр К.",
-    role: "Директор, SportMax",
+    role: "Москва, частный заказчик",
     initials: "АК",
     color: "bg-blue-600",
-    text: "Оперативно выполнили резку стекла для торгового павильона. Качество на высшем уровне, все размеры соблюдены точно. Работаем только с ними.",
+    text: "Заказывали беседку для загородного участка. Всё сделали точно по размерам и в срок, монтаж прошёл быстро и аккуратно. Видно, что команда профессиональная — качество отличное, материалы добротные. Рекомендуем друзьям!",
     rating: 5,
   },
   {
-    name: "Максим Р.",
-    role: "Прораб, АМГ Групп",
-    initials: "МР",
-    color: "bg-violet-600",
-    text: "Сотрудничаем уже 3 года. Всегда чёткие сроки, адекватные цены и отличное качество обработки кромки. Рекомендуем партнёрам.",
-    rating: 5,
-  },
-  {
-    name: "Елена В.",
-    role: "Дизайнер интерьеров, ArtSpace",
-    initials: "ЕВ",
-    color: "bg-emerald-600",
-    text: "Заказывала фигурную резку для дизайнерского проекта. Справились с очень нестандартными формами, всё получилось идеально.",
-    rating: 5,
-  },
-  {
-    name: "Игорь Н.",
-    role: "Руководитель, РЭЙ Инжиниринг",
-    initials: "ИН",
+    name: "ООО «Кофе и Вкус»",
+    role: "г. Краснодар, кафе",
+    initials: "КВ",
     color: "bg-amber-600",
-    text: "Профессиональный подход к большому заказу — 200 листов триплекса нестандартного размера. Поставили в срок, упаковали отлично.",
+    text: "Благодарим за изготовление летнего кафе «под ключ». Получилось красиво, удобно и полностью соответствует бренд-стилю нашего заведения. Работу выполнили за 2 недели, монтаж без нареканий. Отличное соотношение цены и качества!",
+    rating: 5,
+  },
+  {
+    name: "ИП «Гриль & Чилл»",
+    role: "г. Сочи, ресторан",
+    initials: "ГЧ",
+    color: "bg-emerald-600",
+    text: "Делали летнюю террасу для кафе. Ребята полностью взяли всё на себя — от проекта до установки. Качественно, быстро и с вниманием к деталям. Терраса получилась атмосферная, гости в восторге!",
+    rating: 5,
+  },
+  {
+    name: "Марина Л.",
+    role: "Санкт-Петербург, частный дом",
+    initials: "МЛ",
+    color: "bg-violet-600",
+    text: "Заказывала зимний сад и навес. Очень понравилось, что менеджер помог подобрать материалы под климат. Всё выглядит стильно и надёжно. Привезли вовремя, собрали за день. Спасибо!",
     rating: 5,
   },
 ];
@@ -39,7 +39,7 @@ export default function Testimonials() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-14">
           <p className="text-sm font-medium text-blue-600 mb-3 tracking-wide uppercase">
-            Отзывы клиентов
+            Отзывы о нас
           </p>
           <h2 className="text-3xl lg:text-4xl font-bold text-zinc-900">
             Нам доверяют
@@ -48,11 +48,7 @@ export default function Testimonials() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {reviews.map((r) => (
-            <div
-              key={r.name}
-              className="bg-white rounded-2xl border border-zinc-100 p-6 flex flex-col gap-4 hover:shadow-sm transition-shadow"
-            >
-              {/* Stars */}
+            <div key={r.name} className="bg-white rounded-2xl border border-zinc-100 p-6 flex flex-col gap-4 hover:shadow-sm transition-shadow">
               <div className="flex items-center gap-1">
                 {Array.from({ length: r.rating }).map((_, i) => (
                   <svg key={i} className="w-4 h-4 fill-amber-400" viewBox="0 0 20 20">
@@ -60,11 +56,7 @@ export default function Testimonials() {
                   </svg>
                 ))}
               </div>
-
-              {/* Text */}
               <p className="text-sm text-zinc-600 leading-relaxed flex-1">{r.text}</p>
-
-              {/* Author */}
               <div className="flex items-center gap-3 pt-2 border-t border-zinc-50">
                 <div className={`w-9 h-9 rounded-full ${r.color} flex items-center justify-center shrink-0`}>
                   <span className="text-white text-xs font-bold">{r.initials}</span>
