@@ -60,18 +60,18 @@ export default function Header() {
             </a>
             <span className="hidden sm:flex items-center gap-1.5">
               <Clock size={13} />
-              24/7 — принимаем заявки
+              пн–пт: 9:00–18:00
             </span>
-            <a href="mailto:info@alyu-pro.ru" className="hidden md:flex items-center gap-1.5 hover:text-white transition-colors">
+            <a href="mailto:info@bezramnoe-pro.ru" className="hidden md:flex items-center gap-1.5 hover:text-white transition-colors">
               <Mail size={13} />
-              info@alyu-pro.ru
+              info@bezramnoe-pro.ru
             </a>
           </div>
           <Link
             href="/kontakty"
             className="text-xs font-medium text-white border border-white/20 rounded px-3 py-1 hover:bg-white hover:text-zinc-900 transition-all"
           >
-            Смета за 1 минуту
+            Расчёт стоимости
           </Link>
         </div>
       </div>
@@ -82,11 +82,11 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 shrink-0">
             <div className="w-8 h-8 bg-zinc-900 rounded flex items-center justify-center">
-              <span className="text-white font-bold text-xs tracking-tight">АП</span>
+              <span className="text-white font-bold text-xs tracking-tight">БО</span>
             </div>
             <div className="leading-none">
-              <span className="font-bold text-zinc-900 text-[15px] tracking-tight block">АлюПро</span>
-              <span className="text-[10px] text-zinc-400 tracking-wide">Перголы и остекление</span>
+              <span className="font-bold text-zinc-900 text-[15px] tracking-tight block">БезрамноеПро</span>
+              <span className="text-[10px] text-zinc-400 tracking-wide">Остекление под ключ</span>
             </div>
           </Link>
 
