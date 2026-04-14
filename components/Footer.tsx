@@ -27,12 +27,12 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2.5 mb-5">
-              <div className="w-8 h-8 bg-white rounded flex items-center justify-center">
-                <span className="text-zinc-900 font-bold text-xs tracking-tight">АП</span>
+              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-xs tracking-tight">БО</span>
               </div>
               <div className="leading-none">
-                <span className="font-bold text-white text-[15px] block">АлюПро</span>
-                <span className="text-[10px] text-zinc-500 tracking-wide">Перголы и остекление</span>
+                <span className="font-bold text-white text-[15px] block">БезрамноеПро</span>
+                <span className="text-[10px] text-zinc-500 tracking-wide">Остекление под ключ</span>
               </div>
             </Link>
             <p className="text-sm leading-relaxed mb-6">
@@ -97,7 +97,7 @@ export default function Footer() {
 
       <div className="border-t border-zinc-800">
         <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-zinc-600">
-          <p>© 2012–2026 АлюПро. Все права защищены.</p>
+          <p>© 2012–2026 БезрамноеПро. Все права защищены.</p>
           <div className="flex items-center gap-5">
             <Link href="#" className="hover:text-zinc-400 transition-colors">Политика конфиденциальности</Link>
           </div>
