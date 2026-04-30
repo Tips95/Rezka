@@ -59,7 +59,7 @@ export default function KontaktyPage() {
         breadcrumbs={[{ label: "Главная", href: "/" }, { label: "Контакты" }]}
       />
 
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-transparent">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-3 gap-10">
             {/* Left: contacts + departments */}
@@ -67,13 +67,13 @@ export default function KontaktyPage() {
               {/* Contact details */}
               <div>
                 <h2 className="text-lg font-semibold text-zinc-900 mb-5">Реквизиты</h2>
-                <div className="space-y-4">
+                <div className="space-y-4 surface noise relative rounded-2xl p-5 overflow-hidden">
                   {contacts.map((c) => {
                     const Icon = c.icon;
                     const content = (
                       <div className="flex items-start gap-3 group">
-                        <div className="w-9 h-9 rounded-lg bg-zinc-100 flex items-center justify-center shrink-0 group-hover:bg-zinc-900 transition-colors">
-                          <Icon size={15} className="text-zinc-600 group-hover:text-white transition-colors" />
+                        <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center shrink-0 shadow-sm shadow-blue-500/20">
+                          <Icon size={15} className="text-white" />
                         </div>
                         <div>
                           <p className="text-xs text-zinc-400 mb-0.5">{c.label}</p>
@@ -102,7 +102,7 @@ export default function KontaktyPage() {
                 <h2 className="text-lg font-semibold text-zinc-900 mb-5">Менеджеры</h2>
                 <div className="space-y-4">
                   {departments.map((d) => (
-                    <div key={d.name} className="border border-zinc-100 rounded-xl p-4">
+                    <div key={d.name} className="surface noise relative rounded-xl p-4 overflow-hidden">
                       <p className="font-medium text-zinc-900 text-sm mb-0.5">{d.name}</p>
                       <p className="text-xs text-zinc-400 mb-3">{d.role}</p>
                       <a href={`tel:${d.phone.replace(/\D/g, "")}`} className="flex items-center gap-1.5 text-sm text-zinc-600 hover:text-zinc-900 mb-1">
@@ -117,7 +117,7 @@ export default function KontaktyPage() {
               </div>
 
               {/* Legal info */}
-              <div className="bg-zinc-50 rounded-xl p-5">
+              <div className="surface noise relative rounded-xl p-5 overflow-hidden">
                 <h3 className="text-sm font-semibold text-zinc-700 mb-3">Реквизиты организации</h3>
                 <div className="space-y-1.5 text-xs text-zinc-500">
                   <p><span className="text-zinc-700">Название:</span> ООО «ДомГласс»</p>
@@ -130,7 +130,9 @@ export default function KontaktyPage() {
             {/* Right: form (2 columns) */}
             <div className="lg:col-span-2">
               <h2 className="text-lg font-semibold text-zinc-900 mb-6">Отправить заявку</h2>
-              <ContactForm />
+              <div className="surface noise relative rounded-2xl p-6 overflow-hidden">
+                <ContactForm />
+              </div>
             </div>
           </div>
         </div>

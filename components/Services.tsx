@@ -90,7 +90,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 bg-white">
+    <section id="services" className="py-24 bg-transparent">
       <div className="max-w-7xl mx-auto px-6">
         {/* Heading */}
         <div className="mb-14">
@@ -107,14 +107,14 @@ export default function Services() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-px bg-zinc-100 rounded-2xl overflow-hidden border border-zinc-100">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-px bg-white/40 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/50">
           {services.map((service) => {
             const Icon = service.icon;
             return (
               <a
                 key={service.title}
                 href={service.href}
-                className="group bg-white p-6 hover:bg-zinc-50 transition-colors flex flex-col gap-3"
+                className="group bg-white/80 backdrop-blur-md p-6 hover:bg-white/90 transition-colors flex flex-col gap-3"
               >
                 <div className="w-10 h-10 rounded-lg bg-zinc-100 flex items-center justify-center group-hover:bg-blue-50 transition-colors">
                   <Icon size={18} className="text-zinc-600 group-hover:text-blue-600 transition-colors" />

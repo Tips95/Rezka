@@ -35,7 +35,7 @@ export default function MoskitnyeSetkaPage() {
         breadcrumbs={[{ label: "Главная", href: "/" }, { label: "Направления", href: "/uslugi" }, { label: "Москитные сетки плиссе" }]}
       />
 
-      <section className="py-14 bg-white border-b border-zinc-100">
+      <section className="py-14 bg-transparent">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {[
@@ -43,7 +43,7 @@ export default function MoskitnyeSetkaPage() {
               { label: "Рама", value: "Алюминий" },
               { label: "Форма проёма", value: "Любая" },
             ].map((s) => (
-              <div key={s.label} className="border border-zinc-100 rounded-2xl p-6 text-center">
+              <div key={s.label} className="surface noise relative overflow-hidden rounded-2xl p-6 text-center">
                 <p className="text-xs text-zinc-400 uppercase tracking-widest mb-3">{s.label}</p>
                 <p className="text-xl font-bold text-zinc-900">{s.value}</p>
               </div>
@@ -52,15 +52,15 @@ export default function MoskitnyeSetkaPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-zinc-50">
+      <section className="py-20 bg-transparent">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-12">
             <p className="text-sm font-medium text-blue-600 mb-3 tracking-wide uppercase">Виды</p>
-            <h2 className="text-3xl font-bold text-zinc-900">Типы москитных сеток</h2>
+            <h2 className="text-3xl font-bold text-zinc-900 headline">Типы москитных сеток</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {types.map((t) => (
-              <div key={t.num} className="bg-white rounded-2xl border border-zinc-100 p-6">
+              <div key={t.num} className="surface noise relative overflow-hidden rounded-2xl p-6">
                 <div className="text-xs text-zinc-400 font-mono mb-3">{t.num}</div>
                 <h3 className="font-semibold text-zinc-900 mb-2">{t.title}</h3>
                 <p className="text-sm text-zinc-500 leading-relaxed">{t.desc}</p>
@@ -70,30 +70,38 @@ export default function MoskitnyeSetkaPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-transparent">
         <div className="max-w-3xl mx-auto px-6">
           <p className="text-sm font-medium text-blue-600 mb-3 tracking-wide uppercase">Характеристики</p>
-          <h2 className="text-3xl font-bold text-zinc-900 mb-8">Что входит в поставку</h2>
-          <ul className="space-y-4">
-            {features.map((f) => (
-              <li key={f} className="flex items-start gap-3">
-                <CheckCircle2 size={17} className="text-emerald-500 mt-0.5 shrink-0" />
-                <span className="text-sm text-zinc-700 leading-relaxed">{f}</span>
-              </li>
-            ))}
-          </ul>
+          <h2 className="text-3xl font-bold text-zinc-900 mb-8 headline">Что входит в поставку</h2>
+          <div className="surface noise relative overflow-hidden rounded-3xl p-7">
+            <ul className="space-y-4">
+              {features.map((f) => (
+                <li key={f} className="flex items-start gap-3">
+                  <CheckCircle2 size={17} className="text-emerald-600 mt-0.5 shrink-0" />
+                  <span className="text-sm text-zinc-700 leading-relaxed">{f}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
-      <section className="py-16 bg-zinc-900">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div>
-            <h3 className="text-xl font-bold text-white mb-1">Нужны москитные сетки?</h3>
-            <p className="text-zinc-400 text-sm">Укажите количество и размеры — рассчитаем стоимость.</p>
+      <section className="py-20 bg-transparent">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="relative overflow-hidden rounded-3xl">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-violet-600 to-cyan-600" />
+            <div className="absolute inset-0 opacity-35 [background:radial-gradient(circle_at_20%_10%,rgba(255,255,255,0.28),transparent_40%),radial-gradient(circle_at_80%_20%,rgba(255,255,255,0.18),transparent_45%)]" />
+            <div className="relative p-8 sm:p-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 text-white">
+              <div>
+                <h3 className="text-2xl font-bold mb-1">Нужны москитные сетки?</h3>
+                <p className="text-white/75 text-sm">Укажите количество и размеры — рассчитаем стоимость.</p>
+              </div>
+              <Link href="/kontakty" className="ring-focus shrink-0 inline-flex items-center gap-2 bg-white text-zinc-900 font-semibold px-7 py-3.5 rounded-xl hover:bg-white/90 transition-colors">
+                Оставить заявку <ArrowRight size={15} />
+              </Link>
+            </div>
           </div>
-          <Link href="/kontakty" className="shrink-0 inline-flex items-center gap-2 bg-white text-zinc-900 font-semibold px-7 py-3.5 rounded-lg hover:bg-zinc-100 transition-colors">
-            Оставить заявку <ArrowRight size={15} />
-          </Link>
         </div>
       </section>
     </>

@@ -83,7 +83,7 @@ export default function UslugiPage() {
         breadcrumbs={[{ label: "Главная", href: "/" }, { label: "Наши направления" }]}
       />
 
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-transparent">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
             {services.map((service) => {
@@ -92,22 +92,22 @@ export default function UslugiPage() {
                 <Link
                   key={service.title}
                   href={service.href}
-                  className="group flex gap-5 border border-zinc-100 rounded-2xl p-6 hover:border-zinc-200 hover:shadow-sm transition-all"
+                  className="group flex gap-5 rounded-2xl p-6 transition-all surface noise relative overflow-hidden hover:shadow-lg hover:shadow-[rgba(15,23,42,0.10)]"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-zinc-100 flex items-center justify-center shrink-0 group-hover:bg-zinc-900 transition-colors">
-                    <Icon size={20} className="text-zinc-600 group-hover:text-white transition-colors" />
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center shrink-0 shadow-sm shadow-blue-500/20">
+                    <Icon size={20} className="text-white" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between gap-2 mb-2">
-                      <h3 className="font-semibold text-zinc-900 text-[15px] group-hover:text-blue-600 transition-colors">
+                      <h3 className="font-semibold text-zinc-900 text-[15px] group-hover:text-blue-700 transition-colors">
                         {service.title}
                       </h3>
-                      <ArrowRight size={15} className="text-zinc-300 group-hover:text-blue-600 transition-colors shrink-0" />
+                      <ArrowRight size={15} className="text-zinc-400 group-hover:text-blue-700 transition-colors shrink-0" />
                     </div>
                     <p className="text-sm text-zinc-500 leading-relaxed mb-3">{service.desc}</p>
                     <div className="flex flex-wrap gap-1.5">
                       {service.tags.map((tag) => (
-                        <span key={tag} className="text-xs bg-zinc-100 text-zinc-500 px-2.5 py-0.5 rounded-full">
+                        <span key={tag} className="text-xs bg-white/70 border border-white/70 text-zinc-600 px-2.5 py-0.5 rounded-full">
                           {tag}
                         </span>
                       ))}

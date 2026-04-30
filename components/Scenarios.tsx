@@ -45,7 +45,7 @@ const scenarios = [
 
 export default function Scenarios() {
   return (
-    <section className="py-24 bg-zinc-50">
+    <section className="py-24 bg-transparent">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-14">
           <p className="text-sm font-medium text-blue-600 mb-3 tracking-wide uppercase">
@@ -54,7 +54,9 @@ export default function Scenarios() {
           <h2 className="text-3xl lg:text-4xl font-bold text-zinc-900">
             Выберите свой сценарий —{" "}
             <br className="hidden sm:block" />
-            получите расчёт за 1 минуту
+            <span className="bg-gradient-to-r from-blue-600 via-cyan-600 to-violet-600 bg-clip-text text-transparent">
+              получите расчёт за 1 минуту
+            </span>
           </h2>
         </div>
 

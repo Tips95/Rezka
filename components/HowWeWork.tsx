@@ -31,13 +31,18 @@ const steps = [
 
 export default function HowWeWork() {
   return (
-    <section className="py-24 bg-zinc-900 text-white">
+    <section className="relative py-24 text-white bg-transparent overflow-hidden">
+      <div className="absolute inset-0 -z-10">
+        <div className="aurora opacity-70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/85 via-zinc-950/78 to-zinc-950/65" />
+      </div>
+
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-14">
           <p className="text-sm font-medium text-blue-400 mb-3 tracking-wide uppercase">
             Этапы работы
           </p>
-          <h2 className="text-3xl lg:text-4xl font-bold">
+          <h2 className="text-3xl lg:text-4xl font-bold headline">
             Проект под ключ за 14 дней
           </h2>
           <p className="text-zinc-400 mt-3 max-w-lg">
@@ -47,7 +52,10 @@ export default function HowWeWork() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {steps.map((step) => (
-            <div key={step.num} className="relative bg-zinc-800/50 rounded-2xl p-7 flex flex-col gap-4 overflow-hidden border border-white/5 hover:border-white/10 transition-colors">
+            <div
+              key={step.num}
+              className="relative bg-zinc-950/55 backdrop-blur-xl rounded-2xl p-7 flex flex-col gap-4 overflow-hidden border border-white/10 hover:border-white/20 transition-colors"
+            >
               <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${step.color} rounded-t-2xl`} />
               <span className={`text-6xl font-bold leading-none ${step.numColor} select-none`}>{step.num}</span>
               <div>

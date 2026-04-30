@@ -62,11 +62,11 @@ export default function ProektyPage() {
         breadcrumbs={[{ label: "Главная", href: "/" }, { label: "Наши проекты" }]}
       />
 
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-transparent">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {projects.map((p) => (
-              <div key={p.title} className="border border-zinc-100 rounded-2xl p-7 hover:border-zinc-200 hover:shadow-sm transition-all">
+              <div key={p.title} className="surface noise relative overflow-hidden rounded-2xl p-7 hover:shadow-lg hover:shadow-[rgba(15,23,42,0.10)] transition-all">
                 <div className="flex items-start justify-between gap-4 mb-4">
                   <div>
                     <span className="text-xs font-semibold text-blue-600 uppercase tracking-wide">{p.type}</span>
@@ -77,7 +77,7 @@ export default function ProektyPage() {
                 <p className="text-sm text-zinc-600 leading-relaxed mb-4">{p.desc}</p>
                 <div className="flex flex-wrap gap-1.5">
                   {p.tags.map((tag) => (
-                    <span key={tag} className="text-xs bg-zinc-100 text-zinc-500 px-2.5 py-0.5 rounded-full">
+                    <span key={tag} className="text-xs bg-white/70 border border-white/70 text-zinc-600 px-2.5 py-0.5 rounded-full">
                       {tag}
                     </span>
                   ))}
@@ -88,15 +88,21 @@ export default function ProektyPage() {
         </div>
       </section>
 
-      <section className="py-16 bg-zinc-900">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div>
-            <h3 className="text-xl font-bold text-white mb-1">Хотите реализовать похожий проект?</h3>
-            <p className="text-zinc-400 text-sm">Разработаем бесплатный 3D-проект и смету.</p>
+      <section className="py-20 bg-transparent">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="relative overflow-hidden rounded-3xl">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-violet-600 to-cyan-600" />
+            <div className="absolute inset-0 opacity-35 [background:radial-gradient(circle_at_20%_10%,rgba(255,255,255,0.28),transparent_40%),radial-gradient(circle_at_80%_20%,rgba(255,255,255,0.18),transparent_45%)]" />
+            <div className="relative p-8 sm:p-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 text-white">
+              <div>
+                <h3 className="text-2xl font-bold mb-1">Хотите реализовать похожий проект?</h3>
+                <p className="text-white/75 text-sm">Разработаем бесплатный 3D-проект и смету.</p>
+              </div>
+              <Link href="/kontakty" className="ring-focus shrink-0 inline-flex items-center gap-2 bg-white text-zinc-900 font-semibold px-7 py-3.5 rounded-xl hover:bg-white/90 transition-colors">
+                Оставить заявку <ArrowRight size={15} />
+              </Link>
+            </div>
           </div>
-          <Link href="/kontakty" className="shrink-0 inline-flex items-center gap-2 bg-white text-zinc-900 font-semibold px-7 py-3.5 rounded-lg hover:bg-zinc-100 transition-colors">
-            Оставить заявку <ArrowRight size={15} />
-          </Link>
         </div>
       </section>
     </>

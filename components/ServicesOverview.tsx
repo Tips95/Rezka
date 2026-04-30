@@ -78,7 +78,7 @@ const services = [
 
 export default function ServicesOverview() {
   return (
-    <section className="py-24 bg-zinc-50">
+    <section className="py-24 bg-transparent">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-end justify-between mb-12 gap-4 flex-wrap">
           <div>
@@ -86,7 +86,9 @@ export default function ServicesOverview() {
               Наши направления
             </p>
             <h2 className="text-3xl lg:text-4xl font-bold text-zinc-900">
-              Что мы делаем
+              <span className="bg-gradient-to-r from-zinc-900 to-zinc-700 bg-clip-text text-transparent">
+                Что мы делаем
+              </span>
             </h2>
           </div>
           <Link
@@ -104,7 +106,7 @@ export default function ServicesOverview() {
               <Link
                 key={service.title}
                 href={service.href}
-                className={`group rounded-2xl border p-6 hover:shadow-md transition-all flex flex-col gap-4 ${service.light}`}
+                className={`group rounded-2xl border p-6 hover:shadow-md transition-all flex flex-col gap-4 bg-white/70 backdrop-blur-sm border-white/60 hover:bg-white/80 ${service.light}`}
               >
                 <div className={`w-11 h-11 rounded-xl ${service.color} flex items-center justify-center shadow-sm`}>
                   <Icon size={18} className="text-white" />

@@ -21,8 +21,13 @@ const navInfo = [
 
 export default function Footer() {
   return (
-    <footer className="bg-zinc-950 text-zinc-400">
-      <div className="max-w-7xl mx-auto px-6 py-16">
+    <footer className="relative overflow-hidden bg-zinc-950 text-zinc-400">
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute -top-32 left-1/2 h-[520px] w-[900px] -translate-x-1/2 bg-gradient-to-r from-blue-500/25 via-cyan-400/20 to-violet-500/25 blur-3xl opacity-60" />
+        <div className="absolute inset-0 opacity-10 [background:radial-gradient(circle_at_20%_0%,rgba(255,255,255,0.08),transparent_45%),radial-gradient(circle_at_80%_10%,rgba(255,255,255,0.06),transparent_42%)]" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 py-16 relative">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="lg:col-span-1">
@@ -95,8 +100,8 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-zinc-800">
-        <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-zinc-600">
+      <div className="border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-zinc-600 relative">
           <p>© 2012–2026 БезрамноеПро. Все права защищены.</p>
           <div className="flex items-center gap-5">
             <Link href="#" className="hover:text-zinc-400 transition-colors">Политика конфиденциальности</Link>

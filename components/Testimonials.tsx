@@ -39,20 +39,28 @@ const reviews = [
 
 export default function Testimonials() {
   return (
-    <section className="py-24 bg-zinc-900">
+    <section className="relative py-24 bg-transparent overflow-hidden">
+      <div className="absolute inset-0 -z-10">
+        <div className="aurora opacity-60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/85 via-zinc-950/78 to-zinc-950/70" />
+      </div>
+
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-14">
           <p className="text-sm font-medium text-blue-400 mb-3 tracking-wide uppercase">
             Отзывы о нас
           </p>
-          <h2 className="text-3xl lg:text-4xl font-bold text-white">
+          <h2 className="text-3xl lg:text-4xl font-bold text-white headline">
             Нам доверяют
           </h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {reviews.map((r) => (
-            <div key={r.name} className="bg-zinc-800 rounded-2xl overflow-hidden flex flex-col hover:bg-zinc-750 transition-colors border border-white/5">
+            <div
+              key={r.name}
+              className="bg-zinc-950/55 backdrop-blur-xl rounded-2xl overflow-hidden flex flex-col hover:bg-zinc-950/65 transition-colors border border-white/10 hover:border-white/20"
+            >
               {/* Цветная шапка */}
               <div className={`h-1.5 bg-gradient-to-r ${r.grad}`} />
 
