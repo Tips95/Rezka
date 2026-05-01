@@ -11,10 +11,10 @@ export default function HomeCTA() {
   return (
     <section className="relative py-24 overflow-hidden">
       {/* Gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-violet-600 to-cyan-600" />
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-cyan-950" />
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0djZoNnYtNmgtNnptMCAwdi02aC02djZoNnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-40" />
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white/5 rounded-full blur-[100px] translate-x-1/3 -translate-y-1/3" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-white/5 rounded-full blur-[80px] -translate-x-1/4 translate-y-1/4" />
+      <div className="absolute top-0 right-0 w-[min(600px,68vw)] h-[min(600px,68vw)] bg-cyan-300/10 rounded-full blur-[100px] translate-x-1/3 -translate-y-1/3" />
+      <div className="absolute bottom-0 left-0 w-[min(420px,60vw)] h-[min(420px,60vw)] bg-blue-300/10 rounded-full blur-[85px] -translate-x-1/4 translate-y-1/4" />
 
       <div className="relative max-w-7xl mx-auto px-6">
         <div className="max-w-2xl">
@@ -42,14 +42,14 @@ export default function HomeCTA() {
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
               href="/kontakty"
-              className="inline-flex items-center justify-center gap-2 bg-white text-blue-600 font-bold px-8 py-4 rounded-xl hover:bg-blue-50 transition-colors shadow-lg text-base"
+              className="inline-flex items-center justify-center gap-2 bg-white text-zinc-900 font-bold px-8 py-4 rounded-xl hover:bg-zinc-100 transition-colors shadow-lg text-base"
             >
               Оставить заявку
               <ArrowRight size={16} />
             </Link>
             <a
               href="tel:+74951085560"
-              className="inline-flex items-center justify-center gap-2 border-2 border-white/40 text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/10 transition-colors text-base"
+              className="inline-flex items-center justify-center gap-2 border-2 border-cyan-200/40 text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/10 transition-colors text-base"
             >
               <Phone size={15} />
               +7 495 108-55-60

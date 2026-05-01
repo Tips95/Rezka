@@ -32,8 +32,8 @@ export default function ContactForm() {
   if (submitted) {
     return (
       <div className="flex flex-col items-center justify-center text-center py-16">
-        <div className="w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center mb-5">
-          <Send size={24} className="text-emerald-600" />
+        <div className="w-16 h-16 rounded-full bg-cyan-100/80 border border-cyan-200 flex items-center justify-center mb-5">
+          <Send size={24} className="text-cyan-700" />
         </div>
         <h3 className="text-xl font-semibold text-zinc-900 mb-2">Заявка отправлена!</h3>
         <p className="text-zinc-500 text-sm max-w-sm">
@@ -45,6 +45,7 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
+      {/* Unified premium field style to match glass surfaces site-wide */}
       <div>
         <label className="block text-sm font-medium text-zinc-700 mb-1.5">
           ФИО <span className="text-red-400">*</span>
@@ -55,7 +56,7 @@ export default function ContactForm() {
           placeholder="Иванов Иван Иванович"
           value={form.name}
           onChange={(e) => setForm({ ...form, name: e.target.value })}
-          className="w-full bg-white border border-zinc-200 rounded-lg px-4 py-3 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:border-transparent transition"
+          className="w-full bg-white/75 backdrop-blur-sm border border-white/70 rounded-lg px-4 py-3 text-sm text-zinc-900 placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:border-transparent transition"
         />
       </div>
 
@@ -70,7 +71,7 @@ export default function ContactForm() {
             placeholder="+7 (___) ___-__-__"
             value={form.phone}
             onChange={(e) => setForm({ ...form, phone: e.target.value })}
-            className="w-full bg-white border border-zinc-200 rounded-lg px-4 py-3 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:border-transparent transition"
+            className="w-full bg-white/75 backdrop-blur-sm border border-white/70 rounded-lg px-4 py-3 text-sm text-zinc-900 placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:border-transparent transition"
           />
         </div>
         <div>
@@ -80,7 +81,7 @@ export default function ContactForm() {
             placeholder="example@mail.ru"
             value={form.email}
             onChange={(e) => setForm({ ...form, email: e.target.value })}
-            className="w-full bg-white border border-zinc-200 rounded-lg px-4 py-3 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:border-transparent transition"
+            className="w-full bg-white/75 backdrop-blur-sm border border-white/70 rounded-lg px-4 py-3 text-sm text-zinc-900 placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:border-transparent transition"
           />
         </div>
       </div>
@@ -92,7 +93,7 @@ export default function ContactForm() {
         <select
           value={form.topic}
           onChange={(e) => setForm({ ...form, topic: e.target.value })}
-          className="w-full bg-white border border-zinc-200 rounded-lg px-4 py-3 text-sm text-zinc-900 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:border-transparent transition"
+          className="w-full bg-white/75 backdrop-blur-sm border border-white/70 rounded-lg px-4 py-3 text-sm text-zinc-900 focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:border-transparent transition"
         >
           <option value="">Выберите тему</option>
           {topics.map((t) => (
@@ -109,11 +110,11 @@ export default function ContactForm() {
           required
           checked={form.agree}
           onChange={(e) => setForm({ ...form, agree: e.target.checked })}
-          className="mt-0.5 w-4 h-4 rounded accent-zinc-900"
+          className="mt-0.5 w-4 h-4 rounded accent-cyan-700"
         />
         <span className="text-sm text-zinc-500 leading-relaxed">
           Я принимаю{" "}
-          <a href="#" className="text-zinc-900 underline">
+          <a href="#" className="text-cyan-800 underline underline-offset-2">
             пользовательское соглашение
           </a>{" "}
           и политику конфиденциальности
@@ -122,7 +123,7 @@ export default function ContactForm() {
 
       <button
         type="submit"
-        className="w-full bg-zinc-900 text-white font-semibold py-3.5 rounded-lg hover:bg-zinc-700 transition-colors flex items-center justify-center gap-2 text-sm"
+        className="w-full bg-gradient-to-r from-slate-900 to-cyan-900 text-white font-semibold py-3.5 rounded-lg hover:from-slate-800 hover:to-cyan-800 transition-all flex items-center justify-center gap-2 text-sm shadow-[0_16px_45px_rgba(8,145,178,0.30)]"
       >
         <Send size={15} />
         Отправить заявку

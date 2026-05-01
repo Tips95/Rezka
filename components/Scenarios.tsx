@@ -12,8 +12,8 @@ const scenarios = [
       { label: "Зимние сады", href: "/uslugi/zimnie-sady" },
       { label: "Безрамное остекление", href: "/uslugi/bezramnoe-osteklenie" },
     ],
-    grad: "from-blue-500 to-cyan-500",
-    glow: "shadow-blue-500/30",
+    grad: "from-slate-900 via-blue-900 to-cyan-900",
+    glow: "shadow-blue-900/25",
   },
   {
     icon: Coffee,
@@ -25,8 +25,8 @@ const scenarios = [
       { label: "Панорамные двери", href: "/uslugi/panoramnye-dveri" },
       { label: "ZIP-экраны", href: "/uslugi/zip-ekrany" },
     ],
-    grad: "from-amber-500 to-orange-500",
-    glow: "shadow-amber-500/30",
+    grad: "from-zinc-900 via-slate-800 to-cyan-900",
+    glow: "shadow-zinc-900/25",
   },
   {
     icon: Building2,
@@ -38,8 +38,8 @@ const scenarios = [
       { label: "Москитные сетки", href: "/uslugi/moskitnye-setki" },
       { label: "Безрамное со стеклопакетом", href: "/uslugi/bezramnoe-so-steklopaketom" },
     ],
-    grad: "from-violet-500 to-purple-600",
-    glow: "shadow-violet-500/30",
+    grad: "from-zinc-900 via-slate-900 to-blue-900",
+    glow: "shadow-slate-900/30",
   },
 ];
 
@@ -66,14 +66,15 @@ export default function Scenarios() {
             return (
               <div
                 key={s.tag}
-                className={`relative rounded-2xl bg-gradient-to-br ${s.grad} p-8 flex flex-col gap-5 shadow-xl ${s.glow} overflow-hidden`}
+                className={`relative rounded-2xl bg-gradient-to-br ${s.grad} p-8 flex flex-col gap-5 shadow-xl ${s.glow} overflow-hidden border border-white/10`}
               >
                 {/* Декоративный круг */}
-                <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full" />
-                <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-white/5 rounded-full" />
+                <div className="absolute -top-10 -right-10 w-40 h-40 bg-cyan-300/10 rounded-full" />
+                <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-amber-300/10 rounded-full" />
+                <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,0.08),transparent_30%,transparent_70%,rgba(255,255,255,0.08))]" />
 
                 <div className="relative">
-                  <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-5">
+                  <div className="w-12 h-12 rounded-xl bg-white/15 backdrop-blur-sm flex items-center justify-center mb-5 border border-white/20">
                     <Icon size={22} className="text-white" />
                   </div>
                   <p className="text-xs font-semibold text-white/70 uppercase tracking-wider mb-2">{s.tag}</p>

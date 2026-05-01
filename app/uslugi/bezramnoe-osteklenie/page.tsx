@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
+import ServiceWorksSection from "@/components/ServiceWorksSection";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -88,6 +89,8 @@ export default function BezramnoePage() {
           </div>
         </div>
       </section>
+
+      <ServiceWorksSection folder="bezramnoe-osteklenie" title="Безрамное остекление" />
 
       <section className="py-20 bg-transparent">
         <div className="max-w-7xl mx-auto px-6">

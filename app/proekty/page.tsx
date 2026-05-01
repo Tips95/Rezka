@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
+import ProjectsWorksGallery, { type WorksDirection } from "@/components/ProjectsWorksGallery";
 import { ArrowRight } from "lucide-react";
+import { readdir } from "node:fs/promises";
+import { join } from "node:path";
 
 export const metadata: Metadata = {
   title: "Наши проекты — АлюПро",
@@ -53,7 +56,87 @@ const projects = [
   },
 ];
 
-export default function ProektyPage() {
+const directionConfig: Array<Omit<WorksDirection, "images"> & { folder: string }> = [
+  {
+    key: "bioclimatic-pergola",
+    title: "Биоклиматические перголы",
+    subtitle: "Ламели, автоматика, подсветка и климат-контроль.",
+    href: "/uslugi/bioklimaticheskie-pergoly",
+    folder: "bioclimatic-pergola",
+  },
+  {
+    key: "zimnie-sady",
+    title: "Зимние сады",
+    subtitle: "Тёплые светопрозрачные конструкции для круглогодичного использования.",
+    href: "/uslugi/zimnie-sady",
+    folder: "zimnie-sady",
+  },
+  {
+    key: "zip-ekrany",
+    title: "ZIP-экраны",
+    subtitle: "Внешняя солнцезащита и приватность для террас и фасадов.",
+    href: "/uslugi/zip-ekrany",
+    folder: "zip-ekrany",
+  },
+  {
+    key: "bezramnoe-osteklenie",
+    title: "Безрамное остекление",
+    subtitle: "Максимум света и открытый обзор без тяжёлых профилей.",
+    href: "/uslugi/bezramnoe-osteklenie",
+    folder: "bezramnoe-osteklenie",
+  },
+  {
+    key: "gilotinnoe-osteklenie",
+    title: "Гильотинное остекление",
+    subtitle: "Подъёмные системы для веранд, кафе и ресторанов.",
+    href: "/uslugi/gilotinnoe-osteklenie",
+    folder: "gilotinnoe-osteklenie",
+  },
+  {
+    key: "setki-plisse",
+    title: "Сетки плиссе",
+    subtitle: "Эстетичные решения для дверей, окон и проёмов.",
+    href: "/uslugi/moskitnye-setki",
+    folder: "setki-plisse",
+  },
+];
+
+async function loadWorksDirections(): Promise<WorksDirection[]> {
+  const base = join(process.cwd(), "public", "images", "works");
+
+  return Promise.all(
+    directionConfig.map(async (direction) => {
+      const folderPath = join(base, direction.folder);
+      let files: string[] = [];
+
+      try {
+        const entries = await readdir(folderPath, { withFileTypes: true });
+        files = entries
+          .filter((e) => e.isFile())
+          .map((e) => e.name)
+          .filter((name) => /\.(jpg|jpeg|png|webp)$/i.test(name))
+          .sort((a, b) => a.localeCompare(b))
+          .slice(0, 18)
+          // Keep original filename to avoid double-encoding in next/image src.
+          .map((name) => `/images/works/${direction.folder}/${name}`);
+      } catch {
+        files = [];
+      }
+
+      return {
+        key: direction.key,
+        title: direction.title,
+        subtitle: direction.subtitle,
+        href: direction.href,
+        images: files,
+      };
+    }),
+  );
+}
+
+export default async function ProektyPage() {
+  const worksDirections = await loadWorksDirections();
+
   return (
     <>
       <PageHeader
@@ -85,6 +168,19 @@ export default function ProektyPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="py-8 pb-20 bg-transparent">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="mb-8">
+            <p className="text-sm font-medium text-blue-700 mb-3 tracking-wide uppercase">Наши работы</p>
+            <h2 className="text-3xl lg:text-4xl font-extrabold text-zinc-900 headline">
+              Выберите направление и смотрите{" "}
+              <span className="headline-accent">реальные фото объектов</span>
+            </h2>
+          </div>
+          <ProjectsWorksGallery directions={worksDirections} />
         </div>
       </section>
 

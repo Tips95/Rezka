@@ -7,72 +7,72 @@ const services = [
     title: "Тентовые перголы",
     desc: "Алюминиевые перголы с тентовым покрытием для террас, беседок и летних площадок. Защита от солнца и осадков.",
     href: "/uslugi/tentovye-pergoly",
-    color: "bg-blue-500",
-    light: "bg-blue-50 border-blue-100 group-hover:border-blue-200",
+    color: "bg-gradient-to-br from-blue-700 to-cyan-700",
+    light: "border-blue-200/40 group-hover:border-blue-300/70",
   },
   {
     icon: Wind,
     title: "Биоклиматические перголы",
     desc: "Моторизованные ламельные перголы с управлением климатом. Автоматическое открытие/закрытие, датчики дождя и ветра.",
     href: "/uslugi/bioklimaticheskie-pergoly",
-    color: "bg-violet-500",
-    light: "bg-violet-50 border-violet-100 group-hover:border-violet-200",
+    color: "bg-gradient-to-br from-slate-800 to-blue-700",
+    light: "border-blue-200/30 group-hover:border-blue-300/60",
   },
   {
     icon: Leaf,
     title: "Зимние сады",
     desc: "Светопрозрачные алюминиевые конструкции для круглогодичного использования. Вертикальное и наклонное остекление.",
     href: "/uslugi/zimnie-sady",
-    color: "bg-emerald-500",
-    light: "bg-emerald-50 border-emerald-100 group-hover:border-emerald-200",
+    color: "bg-gradient-to-br from-cyan-700 to-teal-700",
+    light: "border-cyan-200/30 group-hover:border-cyan-300/60",
   },
   {
     icon: GlassWater,
     title: "Безрамное остекление",
     desc: "Раздвижные стеклянные панели без рамы для балконов и террас. Максимум света, минимум конструкций.",
     href: "/uslugi/bezramnoe-osteklenie",
-    color: "bg-cyan-500",
-    light: "bg-cyan-50 border-cyan-100 group-hover:border-cyan-200",
+    color: "bg-gradient-to-br from-blue-700 to-cyan-700",
+    light: "border-cyan-200/30 group-hover:border-cyan-300/60",
   },
   {
     icon: Layers,
     title: "Безрамное со стеклопакетом",
     desc: "Безрамное остекление с тёплым стеклопакетом — повышенная теплоизоляция при сохранении эстетики.",
     href: "/uslugi/bezramnoe-so-steklopaketom",
-    color: "bg-sky-500",
-    light: "bg-sky-50 border-sky-100 group-hover:border-sky-200",
+    color: "bg-gradient-to-br from-blue-700 to-sky-700",
+    light: "border-sky-200/30 group-hover:border-sky-300/60",
   },
   {
     icon: PanelTop,
     title: "Гильотинное остекление",
     desc: "Подъёмное гильотинное остекление с терморазрывом. Идеально для ресторанов, кафе и отелей.",
     href: "/uslugi/gilotinnoe-osteklenie",
-    color: "bg-indigo-500",
-    light: "bg-indigo-50 border-indigo-100 group-hover:border-indigo-200",
+    color: "bg-gradient-to-br from-slate-700 to-indigo-700",
+    light: "border-indigo-200/30 group-hover:border-indigo-300/60",
   },
   {
     icon: DoorOpen,
     title: "Панорамные двери",
     desc: "Складные и раздвижные панорамные двери из алюминия. Открывают пространство на всю ширину проёма.",
     href: "/uslugi/panoramnye-dveri",
-    color: "bg-amber-500",
-    light: "bg-amber-50 border-amber-100 group-hover:border-amber-200",
+    color: "bg-gradient-to-br from-amber-700 to-orange-700",
+    light: "border-amber-200/40 group-hover:border-amber-300/70",
   },
   {
     icon: Bug,
     title: "Москитные сетки плиссе",
     desc: "Плиссированные москитные сетки на алюминиевой раме. Для окон, дверей и нестандартных проёмов.",
     href: "/uslugi/moskitnye-setki",
-    color: "bg-teal-500",
-    light: "bg-teal-50 border-teal-100 group-hover:border-teal-200",
+    color: "bg-gradient-to-br from-teal-700 to-cyan-700",
+    light: "border-teal-200/30 group-hover:border-teal-300/60",
   },
   {
     icon: Shield,
     title: "ZIP-экраны",
     desc: "Внешние рулонные шторы ZIP с направляющими. Защита от солнца, ветра и сохранение приватности.",
     href: "/uslugi/zip-ekrany",
-    color: "bg-rose-500",
-    light: "bg-rose-50 border-rose-100 group-hover:border-rose-200",
+    color: "bg-gradient-to-br from-slate-800 to-cyan-700",
+    light: "border-cyan-200/30 group-hover:border-cyan-300/60",
   },
 ];
 
@@ -106,7 +106,7 @@ export default function ServicesOverview() {
               <Link
                 key={service.title}
                 href={service.href}
-                className={`group rounded-2xl border p-6 hover:shadow-md transition-all flex flex-col gap-4 bg-white/70 backdrop-blur-sm border-white/60 hover:bg-white/80 ${service.light}`}
+                className={`group rounded-2xl border p-6 hover:shadow-[0_18px_50px_rgba(15,23,42,0.16)] transition-all flex flex-col gap-4 surface-tint ${service.light}`}
               >
                 <div className={`w-11 h-11 rounded-xl ${service.color} flex items-center justify-center shadow-sm`}>
                   <Icon size={18} className="text-white" />

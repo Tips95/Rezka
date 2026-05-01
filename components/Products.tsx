@@ -35,13 +35,13 @@ const categories = [
 
 export default function Products() {
   return (
-    <section id="products" className="py-24 bg-zinc-50">
+    <section id="products" className="py-24 bg-transparent">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-14">
-          <p className="text-sm font-medium text-blue-600 mb-3 tracking-wide uppercase">
+          <p className="text-sm font-medium text-cyan-700 mb-3 tracking-wide uppercase">
             Каталог
           </p>
-          <h2 className="text-3xl lg:text-4xl font-bold text-zinc-900 mb-4">
+          <h2 className="headline text-3xl lg:text-4xl font-bold text-zinc-900 mb-4">
             Изделия из стекла на заказ
           </h2>
           <p className="text-zinc-500 max-w-xl leading-relaxed">
@@ -54,7 +54,7 @@ export default function Products() {
           {categories.map((cat) => (
             <div
               key={cat.title}
-              className="bg-white rounded-2xl border border-zinc-100 p-6 hover:border-zinc-200 hover:shadow-sm transition-all"
+              className="surface-tint rounded-2xl border border-white/70 p-6 hover:border-cyan-200/70 hover:shadow-[0_16px_45px_rgba(15,23,42,0.14)] transition-all"
             >
               <h3 className="font-semibold text-zinc-900 text-[15px] mb-4">{cat.title}</h3>
               <ul className="space-y-2">
@@ -62,9 +62,9 @@ export default function Products() {
                   <li key={item}>
                     <a
                       href="#"
-                      className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors flex items-center gap-2"
+                      className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors flex items-center gap-2"
                     >
-                      <span className="w-1 h-1 rounded-full bg-zinc-300 shrink-0" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-600/70 shrink-0" />
                       {item}
                     </a>
                   </li>

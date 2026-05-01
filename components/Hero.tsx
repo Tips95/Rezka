@@ -8,8 +8,6 @@ const highlights = [
   "ZIP-экраны и москитные сетки плиссе",
 ];
 
-const badges = ["✅ 500+ проектов", "✅ Гарантия 5 лет", "✅ Бесплатный 3D-проект"];
-
 export default function Hero() {
   return (
     <section className="bg-transparent">
