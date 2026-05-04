@@ -33,8 +33,11 @@ export default function MoskitnyeSetkaPage() {
       <PageHeader
         title="Москитные сетки плиссе"
         subtitle="Плиссированные москитные сетки на алюминиевой раме для окон, дверей и нестандартных проёмов."
+        backgroundImage="/images/works/setki-plisse/image-30-04-26-03-01-3.jpeg"
         breadcrumbs={[{ label: "Главная", href: "/" }, { label: "Направления", href: "/uslugi" }, { label: "Москитные сетки плиссе" }]}
       />
+
+      <ServiceWorksSection folder="setki-plisse" title="Сетки плиссе" />
 
       <section className="py-14 bg-transparent">
         <div className="max-w-7xl mx-auto px-6">
@@ -87,8 +90,6 @@ export default function MoskitnyeSetkaPage() {
           </div>
         </div>
       </section>
-
-      <ServiceWorksSection folder="setki-plisse" title="Сетки плиссе" />
 
       <section className="py-20 bg-transparent">
         <div className="max-w-7xl mx-auto px-6">

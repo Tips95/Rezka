@@ -33,8 +33,11 @@ export default function ZimnieSadyPage() {
       <PageHeader
         title="Зимние сады"
         subtitle="Светопрозрачные алюминиевые конструкции для круглогодичного использования с тёплым профилем и стеклопакетами."
+        backgroundImage="/images/works/zimnie-sady/image-30-04-26-02-41-1.jpeg"
         breadcrumbs={[{ label: "Главная", href: "/" }, { label: "Направления", href: "/uslugi" }, { label: "Зимние сады" }]}
       />
+
+      <ServiceWorksSection folder="zimnie-sady" title="Зимние сады" />
 
       <section className="py-14 bg-transparent">
         <div className="max-w-7xl mx-auto px-6">
@@ -87,8 +90,6 @@ export default function ZimnieSadyPage() {
           </div>
         </div>
       </section>
-
-      <ServiceWorksSection folder="zimnie-sady" title="Зимние сады" />
 
       <section className="py-20 bg-transparent">
         <div className="max-w-7xl mx-auto px-6">

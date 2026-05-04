@@ -33,8 +33,11 @@ export default function GilotinnoeOstekleniePage() {
       <PageHeader
         title="Гильотинное остекление"
         subtitle="Подъёмное гильотинное остекление ALDU с терморазрывом. Для ресторанов, кафе и отелей. Автоматика Somfy."
+        backgroundImage="/images/works/gilotinnoe-osteklenie/hd_22faef42572bba7e56eab528f1bac793_65c0c20ef2882.jpg"
         breadcrumbs={[{ label: "Главная", href: "/" }, { label: "Направления", href: "/uslugi" }, { label: "Гильотинное остекление" }]}
       />
+
+      <ServiceWorksSection folder="gilotinnoe-osteklenie" title="Гильотинное остекление" />
 
       <section className="py-14 bg-transparent">
         <div className="max-w-7xl mx-auto px-6">
@@ -87,8 +90,6 @@ export default function GilotinnoeOstekleniePage() {
           </div>
         </div>
       </section>
-
-      <ServiceWorksSection folder="gilotinnoe-osteklenie" title="Гильотинное остекление" />
 
       <section className="py-20 bg-transparent">
         <div className="max-w-7xl mx-auto px-6">

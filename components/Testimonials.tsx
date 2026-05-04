@@ -39,18 +39,13 @@ const reviews = [
 
 export default function Testimonials() {
   return (
-    <section className="relative py-24 bg-transparent overflow-hidden">
-      <div className="absolute inset-0 -z-10">
-        <div className="aurora opacity-60" />
-        <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/85 via-zinc-950/78 to-zinc-950/70" />
-      </div>
-
+    <section className="relative py-20 bg-white border-y border-zinc-200 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-14">
-          <p className="text-sm font-medium text-blue-400 mb-3 tracking-wide uppercase">
+          <p className="text-sm font-semibold text-zinc-500 mb-3 tracking-[0.2em] uppercase">
             Отзывы о нас
           </p>
-          <h2 className="text-3xl lg:text-4xl font-bold text-white headline">
+          <h2 className="text-3xl lg:text-4xl font-extrabold text-zinc-900 headline">
             Нам доверяют
           </h2>
         </div>
@@ -59,13 +54,11 @@ export default function Testimonials() {
           {reviews.map((r) => (
             <div
               key={r.name}
-              className="bg-zinc-950/55 backdrop-blur-xl rounded-2xl overflow-hidden flex flex-col hover:bg-zinc-950/65 transition-colors border border-white/10 hover:border-white/20"
+              className="bg-white rounded-2xl overflow-hidden flex flex-col transition-colors border border-zinc-200"
             >
-              {/* Цветная шапка */}
               <div className={`h-1.5 bg-gradient-to-r ${r.grad}`} />
 
               <div className="p-6 flex flex-col gap-4 flex-1">
-                {/* Stars */}
                 <div className="flex items-center gap-1">
                   {Array.from({ length: r.rating }).map((_, i) => (
                     <svg key={i} className="w-4 h-4 fill-amber-400" viewBox="0 0 20 20">
@@ -74,15 +67,15 @@ export default function Testimonials() {
                   ))}
                 </div>
 
-                <p className="text-sm text-zinc-300 leading-relaxed flex-1">{r.text}</p>
+                <p className="text-sm text-zinc-700 leading-relaxed flex-1">{r.text}</p>
 
-                <div className="flex items-center gap-3 pt-3 border-t border-white/10">
+                <div className="flex items-center gap-3 pt-3 border-t border-zinc-200">
                   <div className={`w-9 h-9 rounded-full bg-gradient-to-br ${r.grad} flex items-center justify-center shrink-0 shadow-sm`}>
                     <span className="text-white text-xs font-bold">{r.initials}</span>
                   </div>
                   <div>
-                    <div className="font-semibold text-white text-sm">{r.name}</div>
-                    <div className="text-xs text-zinc-500">{r.role}</div>
+                    <div className="font-semibold text-zinc-900 text-sm">{r.name}</div>
+                    <div className="text-xs text-zinc-500 mt-0.5">{r.role}</div>
                   </div>
                 </div>
               </div>

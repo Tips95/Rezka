@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
+import ServiceWorksSection from "@/components/ServiceWorksSection";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -32,8 +33,11 @@ export default function PanoramnyeDveriPage() {
       <PageHeader
         title="Панорамные двери"
         subtitle="Складные и раздвижные панорамные алюминиевые двери. Открывают пространство на всю ширину проёма."
+        backgroundImage="/images/works/gilotinnoe-osteklenie/Cedrus-Gallery9.jpg"
         breadcrumbs={[{ label: "Главная", href: "/" }, { label: "Направления", href: "/uslugi" }, { label: "Панорамные двери" }]}
       />
+
+      <ServiceWorksSection folder="gilotinnoe-osteklenie" title="Панорамные двери" />
 
       <section className="py-14 bg-transparent">
         <div className="max-w-7xl mx-auto px-6">

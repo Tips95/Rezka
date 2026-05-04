@@ -34,8 +34,11 @@ export default function BioklimaticPage() {
       <PageHeader
         title="Биоклиматические перголы"
         subtitle="Моторизованные ламельные перголы с автоматическим управлением климатом, датчиками и LED-подсветкой."
+        backgroundImage="/images/works/bioclimatic-pergola/3 (5).jpg"
         breadcrumbs={[{ label: "Главная", href: "/" }, { label: "Направления", href: "/uslugi" }, { label: "Биоклиматические перголы" }]}
       />
+
+      <ServiceWorksSection folder="bioclimatic-pergola" title="Биоклиматические перголы" />
 
       <section className="py-14 bg-transparent">
         <div className="max-w-7xl mx-auto px-6">
@@ -88,8 +91,6 @@ export default function BioklimaticPage() {
           </div>
         </div>
       </section>
-
-      <ServiceWorksSection folder="bioclimatic-pergola" title="Биоклиматические перголы" />
 
       <section className="py-20 bg-transparent">
         <div className="max-w-7xl mx-auto px-6">

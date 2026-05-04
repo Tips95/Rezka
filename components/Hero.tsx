@@ -1,130 +1,71 @@
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, Clock, Sparkles, ShieldCheck, Ruler, Truck } from "lucide-react";
-
-const highlights = [
-  "Тентовые и биоклиматические перголы",
-  "Безрамное остекление балконов и террас",
-  "Зимние сады и панорамные двери",
-  "ZIP-экраны и москитные сетки плиссе",
-];
+import Image from "next/image";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="bg-transparent">
-      <div className="max-w-7xl mx-auto px-6 py-8 lg:py-12">
-        <div className="relative overflow-hidden rounded-3xl border border-white/60 shadow-[0_24px_90px_rgba(15,23,42,0.12)]">
-          <div className="absolute inset-0 -z-10">
-            <div className="aurora opacity-85" />
-            <div
-              className="absolute inset-0"
-              style={{
-                background:
-                  "radial-gradient(1200px 700px at 20% 10%, rgba(255,255,255,0.85), transparent 58%), radial-gradient(900px 600px at 80% 30%, rgba(255,255,255,0.65), transparent 55%), linear-gradient(180deg, rgba(255,255,255,0.65), rgba(255,255,255,0.35))",
-              }}
-            />
-          </div>
+    <section className="pt-0 pb-16 bg-[#f6f7f8]">
+      <div className="w-full">
+        <div className="relative overflow-hidden min-h-[520px] lg:min-h-[620px] border-y border-zinc-200">
+          <Image
+            src="/images/optimized/hero-bg.webp"
+            alt="Премиальные перголы и остекление"
+            fill
+            priority
+            sizes="(max-width: 1280px) 100vw, 1280px"
+            className="object-cover"
+          />
 
-          <div className="relative p-6 lg:p-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-              {/* Left — headline bento */}
-              <div className="lg:col-span-7 surface-tint noise relative overflow-hidden rounded-3xl p-7 lg:p-9">
-                <div className="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-gradient-to-br from-blue-500/25 to-cyan-400/10 blur-2xl" />
-                <div className="absolute -bottom-28 -left-28 h-80 w-80 rounded-full bg-gradient-to-br from-violet-500/22 to-blue-500/10 blur-2xl" />
+          <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/88 via-zinc-950/58 to-zinc-950/18" />
+          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/45 via-transparent to-zinc-950/8" />
 
-                <div className="relative">
-                  <div className="inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/50 backdrop-blur px-4 py-1.5 text-sm text-zinc-700 mb-7">
-                    <Sparkles size={14} className="text-blue-600" />
-                    Производство в Москве · с 2012 года
+          <div className="relative z-10 h-full flex flex-col justify-between px-6 md:px-10 lg:px-14 py-8 md:py-10 lg:py-12 text-white">
+            <div className="max-w-4xl">
+              <p className="text-xs md:text-sm uppercase tracking-[0.26em] text-white/85 font-semibold mb-4">
+                Премиальные перголы и остекление под ключ
+              </p>
+
+              <h1 className="text-4xl md:text-6xl lg:text-7xl leading-[0.94] font-black uppercase">
+                Проект,
+                <br />
+                производство и
+                <br />
+                монтаж
+              </h1>
+
+              <p className="mt-6 text-sm md:text-xl leading-relaxed text-white/90 max-w-3xl">
+                Автоматика Somfy, европейские материалы и собственное производство.
+                Берём объект под ключ: от сметы и 3D-проекта до монтажа и сдачи.
+              </p>
+
+              <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm text-white/95">
+                {["500+ проектов", "Гарантия 5 лет", "Бесплатный 3D-проект"].map((item) => (
+                  <div key={item} className="inline-flex items-center gap-2">
+                    <CheckCircle2 size={15} className="text-emerald-300" />
+                    <span>{item}</span>
                   </div>
-
-                  <h1 className="text-4xl lg:text-6xl font-extrabold leading-[1.02] tracking-tight headline text-zinc-950">
-                    Остекление, которое{" "}
-                    <span className="headline-accent">выглядит</span>{" "}
-                    как архитектура
-                  </h1>
-
-                  <p className="mt-5 text-base lg:text-lg text-zinc-700 max-w-2xl leading-relaxed">
-                    Проектируем, производим и монтируем под ключ: безрамные системы, перголы и панорамные двери —
-                    с гарантией по договору.
-                  </p>
-
-                  <div className="mt-7 flex flex-col sm:flex-row gap-3">
-                    <Link
-                      href="/kontakty"
-                      className="ring-focus inline-flex items-center justify-center gap-2 bg-zinc-950 text-white font-semibold px-7 py-3.5 rounded-xl hover:bg-zinc-900 transition-colors"
-                    >
-                      Рассчитать стоимость
-                      <ArrowRight size={16} />
-                    </Link>
-                    <Link
-                      href="/uslugi"
-                      className="ring-focus inline-flex items-center justify-center gap-2 bg-white/60 backdrop-blur border border-white/70 text-zinc-900 font-semibold px-7 py-3.5 rounded-xl hover:bg-white/75 transition-colors"
-                    >
-                      Смотреть решения
-                    </Link>
-                  </div>
-
-                  <div className="mt-7 grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                    {highlights.map((item) => (
-                      <div key={item} className="flex items-center gap-2.5 text-sm text-zinc-700">
-                        <CheckCircle2 size={14} className="text-emerald-600 shrink-0" />
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="mt-6 flex items-center gap-2 text-sm text-zinc-600">
-                    <Clock size={14} className="text-blue-700" />
-                    Расчёт стоимости — <span className="text-zinc-900 font-semibold">1 рабочий день</span>
-                  </div>
-                </div>
+                ))}
               </div>
 
-              {/* Right — bento tiles + photo */}
-              <div className="lg:col-span-5 grid grid-cols-2 gap-4">
-                <div className="surface-tint noise relative overflow-hidden rounded-3xl p-5 col-span-2">
-                  <div
-                    className="absolute inset-0 opacity-90"
-                    style={{
-                      backgroundImage: "url(/images/backgrounds/hero-bg.jpeg)",
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/55 via-zinc-950/10 to-white/10" />
-                  <div className="relative flex items-end justify-between gap-4 min-h-44">
-                    <div>
-                      <div className="text-xs font-semibold text-white/70 uppercase tracking-widest">Безрамное остекление</div>
-                      <div className="mt-1 text-2xl font-extrabold text-white">Премиум под ключ</div>
-                    </div>
-                    <div className="hidden sm:flex items-center gap-2 text-xs text-white/80 bg-white/10 border border-white/20 backdrop-blur rounded-full px-3 py-1.5">
-                      <ShieldCheck size={14} className="text-emerald-300" />
-                      Гарантия 5 лет
-                    </div>
-                  </div>
-                </div>
+              <div className="mt-8">
+                <Link
+                  href="/kontakty"
+                  className="ring-focus inline-flex items-center justify-center gap-2 rounded-full bg-[#f7bf19] text-zinc-900 font-extrabold px-8 py-3.5 hover:bg-[#e4ad08] transition-colors"
+                >
+                  Рассчитать стоимость
+                  <ArrowRight size={16} />
+                </Link>
+              </div>
+            </div>
 
-                {[
-                  { icon: Ruler, label: "Проект", value: "3D бесплатно" },
-                  { icon: Truck, label: "Монтаж", value: "под ключ" },
-                  { icon: ShieldCheck, label: "Контроль", value: "100% этапов" },
-                  { icon: Sparkles, label: "Опыт", value: "13 лет" },
-                ].map((k) => {
-                  const Icon = k.icon;
-                  return (
-                    <div key={k.label} className="surface-tint noise relative overflow-hidden rounded-3xl p-5">
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center shadow-sm shadow-blue-500/20">
-                          <Icon size={18} className="text-white" />
-                        </div>
-                        <div>
-                          <div className="text-xs text-zinc-500">{k.label}</div>
-                          <div className="font-bold text-zinc-900">{k.value}</div>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
+            <div className="mt-10 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
+              <p className="text-base md:text-xl font-semibold text-white/92">
+                Проект под ключ за 14 дней. Собственное производство под контролем Rezka
+              </p>
+
+              <div className="self-start sm:self-auto rounded-2xl bg-[#f7bf19]/92 text-zinc-900 px-6 py-5 min-w-[210px] shadow-xl">
+                <div className="text-6xl leading-none font-black">500+</div>
+                <div className="text-sm font-semibold mt-2 uppercase tracking-wide">проектов по всей России</div>
               </div>
             </div>
           </div>

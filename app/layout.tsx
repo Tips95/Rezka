@@ -24,17 +24,6 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body className={`min-h-screen ${inter.className}`}>
-        <div className="fixed inset-0 -z-10 overflow-hidden">
-          <div className="aurora" />
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "radial-gradient(900px 500px at 50% 0%, rgba(255,255,255,0.85), transparent 60%), radial-gradient(700px 420px at 50% 100%, rgba(255,255,255,0.65), transparent 60%)",
-            }}
-          />
-        </div>
-
         <Header />
         <main className="relative">
           {children}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
+import ServiceWorksSection from "@/components/ServiceWorksSection";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -32,8 +33,11 @@ export default function BezramnoeSteklopaketPage() {
       <PageHeader
         title="Безрамное остекление со стеклопакетом"
         subtitle="Сочетание эстетики безрамных систем и теплоизоляционных свойств стеклопакета. Для балконов и террас."
+        backgroundImage="/images/works/bezramnoe-osteklenie/Slade Lux3.jpeg"
         breadcrumbs={[{ label: "Главная", href: "/" }, { label: "Направления", href: "/uslugi" }, { label: "Безрамное со стеклопакетом" }]}
       />
+
+      <ServiceWorksSection folder="bezramnoe-osteklenie" title="Безрамное остекление со стеклопакетом" />
 
       <section className="py-14 bg-transparent">
         <div className="max-w-7xl mx-auto px-6">

@@ -31,21 +31,16 @@ const steps = [
 
 export default function HowWeWork() {
   return (
-    <section className="relative py-24 text-white bg-transparent overflow-hidden">
-      <div className="absolute inset-0 -z-10">
-        <div className="aurora opacity-70" />
-        <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/85 via-zinc-950/78 to-zinc-950/65" />
-      </div>
-
+    <section className="relative py-20 bg-[#f6f7f8] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-14">
-          <p className="text-sm font-medium text-blue-400 mb-3 tracking-wide uppercase">
+          <p className="text-sm font-semibold text-zinc-500 mb-3 tracking-[0.2em] uppercase">
             Этапы работы
           </p>
-          <h2 className="text-3xl lg:text-4xl font-bold headline">
+          <h2 className="text-3xl lg:text-4xl font-extrabold headline text-zinc-900">
             Проект под ключ за 14 дней
           </h2>
-          <p className="text-zinc-400 mt-3 max-w-lg">
+          <p className="text-zinc-600 mt-3 max-w-lg">
             Собственное производство под контролем БезрамноеПро — от эскиза до монтажа.
           </p>
         </div>
@@ -54,20 +49,20 @@ export default function HowWeWork() {
           {steps.map((step) => (
             <div
               key={step.num}
-              className="relative bg-zinc-950/55 backdrop-blur-xl rounded-2xl p-7 flex flex-col gap-4 overflow-hidden border border-white/10 hover:border-white/20 transition-colors"
+              className="relative bg-white rounded-2xl p-7 flex flex-col gap-4 overflow-hidden border border-zinc-200 transition-colors"
             >
               <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${step.color} rounded-t-2xl`} />
-              <span className={`text-6xl font-bold leading-none ${step.numColor} select-none`}>{step.num}</span>
+              <span className="text-6xl font-bold leading-none text-zinc-200 select-none">{step.num}</span>
               <div>
-                <h3 className="font-bold text-white text-lg mb-2">{step.title}</h3>
-                <p className="text-sm text-zinc-400 leading-relaxed">{step.desc}</p>
+                <h3 className="font-bold text-zinc-900 text-lg mb-2">{step.title}</h3>
+                <p className="text-sm text-zinc-600 leading-relaxed">{step.desc}</p>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="mt-8 flex items-center gap-3 text-sm text-zinc-500">
-          <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+        <div className="mt-8 flex items-center gap-3 text-sm text-zinc-600">
+          <div className="w-2 h-2 rounded-full bg-emerald-500" />
           Принимаем заявки 24/7. Менеджер свяжется с вами в течение 15 минут в рабочее время.
         </div>
       </div>

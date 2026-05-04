@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Phone, Clock, Mail, Menu, X, ChevronDown } from "lucide-react";
+import { Phone, Clock, Menu, X, ChevronDown } from "lucide-react";
 
 const directions = [
   { label: "Тентовые перголы", href: "/uslugi/tentovye-pergoly" },
@@ -53,56 +53,44 @@ export default function Header() {
 
   return (
     <>
-      {/* Top bar */}
-      <div className="relative bg-transparent text-sm">
-        <div className="absolute inset-0 -z-10">
-          <div className="aurora opacity-60" />
-          <div className="absolute inset-0 bg-white/70 backdrop-blur-xl" />
-        </div>
-        <div className="max-w-7xl mx-auto px-6 py-2.5 flex items-center justify-between gap-4 flex-wrap">
+      <div className="bg-white border-b border-zinc-200 text-sm">
+        <div className="max-w-7xl mx-auto px-6 py-2.5 flex items-center justify-between gap-4 flex-wrap text-zinc-600">
           <div className="flex items-center gap-6">
-            <a href="tel:+74951085560" className="flex items-center gap-1.5 text-zinc-800 hover:text-zinc-950 transition-colors">
+            <a href="tel:+74951085560" className="flex items-center gap-1.5 text-zinc-700 hover:text-zinc-900 transition-colors">
               <Phone size={13} />
-              <span className="font-medium">+7 495 108-55-60</span>
+              <span className="font-medium">+7 (495) 108-55-60</span>
             </a>
-            <span className="hidden sm:flex items-center gap-1.5 text-zinc-700">
+            <span className="hidden sm:flex items-center gap-1.5">
               <Clock size={13} />
-              пн–пт: 9:00–18:00
+              Приём заявок 24/7
             </span>
-            <a href="mailto:info@bezramnoe-pro.ru" className="hidden md:flex items-center gap-1.5 text-zinc-700 hover:text-zinc-950 transition-colors">
-              <Mail size={13} />
-              info@bezramnoe-pro.ru
-            </a>
           </div>
           <Link
             href="/kontakty"
-            className="ring-focus text-xs font-semibold text-zinc-900 border border-white/60 bg-white/50 backdrop-blur rounded px-3 py-1 hover:bg-white/70 transition-all"
+            className="ring-focus text-xs font-semibold rounded-full px-4 py-1.5 accent-btn"
           >
-            Расчёт стоимости
+            Смета за 1 минуту
           </Link>
         </div>
       </div>
 
-      {/* Main nav */}
       <header
         className={`sticky top-0 z-50 transition-shadow duration-300 ${
-          scrolled ? "shadow-[0_10px_40px_rgba(15,23,42,0.10)]" : ""
-        } border-b border-white/35 bg-white/65 backdrop-blur-xl`}
+          scrolled ? "shadow-[0_8px_30px_rgba(15,23,42,0.08)]" : ""
+        } border-b border-zinc-200 bg-white/95 backdrop-blur`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-          {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 shrink-0">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center shadow-sm shadow-blue-200">
-              <span className="text-white font-bold text-xs tracking-tight">БО</span>
+            <div className="w-9 h-9 bg-zinc-900 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-xs tracking-tight">AL</span>
             </div>
             <div className="leading-none">
-              <span className="font-bold text-zinc-900 text-[15px] tracking-tight block">БезрамноеПро</span>
-              <span className="text-[10px] text-zinc-400 tracking-wide">Остекление под ключ</span>
+              <span className="font-bold text-zinc-900 text-[15px] tracking-tight block">Rezka Premium</span>
+              <span className="text-[10px] text-zinc-500 tracking-wide">Перголы и остекление под ключ</span>
             </div>
           </Link>
 
-          {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-7">
+          <nav className="hidden lg:flex items-center gap-6">
             {navItems.map((item) => {
               const isActive = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
 
@@ -116,18 +104,22 @@ export default function Header() {
                   >
                     <Link
                       href={item.href}
-                      className={`flex items-center gap-1 text-sm py-4 transition-colors ${isActive ? "text-zinc-900 font-medium" : "text-zinc-500 hover:text-zinc-900"}`}
+                      className={`flex items-center gap-1 text-sm py-4 transition-colors ${
+                        isActive ? "text-zinc-900 font-semibold" : "text-zinc-600 hover:text-zinc-900"
+                      }`}
                     >
                       {item.label}
-                      <ChevronDown size={13} className={`transition-transform ${openDropdown === item.label ? "rotate-180" : ""} opacity-50`} />
+                      <ChevronDown size={13} className={`transition-transform ${openDropdown === item.label ? "rotate-180" : ""}`} />
                     </Link>
                     {openDropdown === item.label && (
-                      <div className="absolute top-full left-0 w-72 bg-white border border-zinc-100 rounded-xl shadow-lg py-2 z-50">
+                      <div className="absolute top-full left-0 w-72 bg-white border border-zinc-200 rounded-xl shadow-lg py-2 z-50">
                         {item.children.map((child) => (
                           <Link
                             key={child.label}
                             href={child.href}
-                            className={`block px-4 py-2.5 text-sm transition-colors ${pathname === child.href ? "text-zinc-900 font-medium bg-zinc-50" : "text-zinc-600 hover:text-zinc-900 hover:bg-zinc-50"}`}
+                            className={`block px-4 py-2.5 text-sm transition-colors ${
+                              pathname === child.href ? "text-zinc-900 font-medium bg-zinc-50" : "text-zinc-600 hover:text-zinc-900 hover:bg-zinc-50"
+                            }`}
                           >
                             {child.label}
                           </Link>
@@ -142,7 +134,9 @@ export default function Header() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className={`text-sm py-4 transition-colors ${isActive ? "text-zinc-900 font-medium" : "text-zinc-500 hover:text-zinc-900"}`}
+                  className={`text-sm py-4 transition-colors ${
+                    isActive ? "text-zinc-900 font-semibold" : "text-zinc-600 hover:text-zinc-900"
+                  }`}
                 >
                   {item.label}
                 </Link>
@@ -150,39 +144,36 @@ export default function Header() {
             })}
           </nav>
 
-          {/* CTA */}
           <Link
             href="/kontakty"
-            className="hidden lg:flex items-center gap-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:from-blue-600 hover:to-cyan-600 transition-all shadow-sm shadow-blue-200"
+            className="hidden lg:flex items-center text-sm rounded-full px-5 py-2.5 accent-btn"
           >
-            Оставить заявку
+            Рассчитать проект
           </Link>
 
-          {/* Mobile toggle */}
-          <button className="lg:hidden p-2 rounded text-zinc-600" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Меню">
+          <button className="lg:hidden p-2 rounded text-zinc-700" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Меню">
             {mobileOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
 
-        {/* Mobile menu */}
         {mobileOpen && (
-          <div className="lg:hidden border-t border-white/35 bg-white/75 backdrop-blur-xl max-h-[80vh] overflow-y-auto">
+          <div className="lg:hidden border-t border-zinc-200 bg-white max-h-[80vh] overflow-y-auto">
             <Link
               href="/"
-              className={`block px-6 py-3.5 text-sm border-b border-white/40 ${
-                pathname === "/" ? "text-zinc-900 font-medium bg-white/45" : "text-zinc-700"
+              className={`block px-6 py-3.5 text-sm border-b border-zinc-200 ${
+                pathname === "/" ? "text-zinc-900 font-medium bg-zinc-50" : "text-zinc-700"
               }`}
             >
               Главная
             </Link>
-            <div className="border-b border-white/40">
+            <div className="border-b border-zinc-200">
               <div className="px-6 py-3 text-xs font-semibold text-zinc-400 uppercase tracking-wider">Наши направления</div>
               {directions.map((s) => (
                 <Link
                   key={s.label}
                   href={s.href}
-                  className={`block px-6 py-3 text-sm border-b border-white/40 last:border-0 ${
-                    pathname === s.href ? "text-zinc-900 font-medium bg-white/45" : "text-zinc-700 hover:bg-white/40"
+                  className={`block px-6 py-3 text-sm border-b border-zinc-200 last:border-0 ${
+                    pathname === s.href ? "text-zinc-900 font-medium bg-zinc-50" : "text-zinc-700 hover:bg-zinc-50"
                   }`}
                 >
                   {s.label}
@@ -191,31 +182,31 @@ export default function Header() {
             </div>
             <Link
               href="/o-kompanii"
-              className={`block px-6 py-3.5 text-sm border-b border-white/40 ${
-                pathname === "/o-kompanii" ? "text-zinc-900 font-medium bg-white/45" : "text-zinc-700"
+              className={`block px-6 py-3.5 text-sm border-b border-zinc-200 ${
+                pathname === "/o-kompanii" ? "text-zinc-900 font-medium bg-zinc-50" : "text-zinc-700"
               }`}
             >
               О компании
             </Link>
             <Link
               href="/proekty"
-              className={`block px-6 py-3.5 text-sm border-b border-white/40 ${
-                pathname === "/proekty" ? "text-zinc-900 font-medium bg-white/45" : "text-zinc-700"
+              className={`block px-6 py-3.5 text-sm border-b border-zinc-200 ${
+                pathname === "/proekty" ? "text-zinc-900 font-medium bg-zinc-50" : "text-zinc-700"
               }`}
             >
               Наши проекты
             </Link>
             <Link
               href="/kontakty"
-              className={`block px-6 py-3.5 text-sm border-b border-white/40 ${
-                pathname === "/kontakty" ? "text-zinc-900 font-medium bg-white/45" : "text-zinc-700"
+              className={`block px-6 py-3.5 text-sm border-b border-zinc-200 ${
+                pathname === "/kontakty" ? "text-zinc-900 font-medium bg-zinc-50" : "text-zinc-700"
               }`}
             >
               Контакты
             </Link>
             <div className="p-4">
-              <Link href="/kontakty" className="block text-center bg-zinc-900 text-white text-sm font-medium px-5 py-3 rounded-lg">
-                Оставить заявку
+              <Link href="/kontakty" className="block text-center text-sm px-5 py-3 rounded-full accent-btn">
+                Рассчитать проект
               </Link>
             </div>
           </div>

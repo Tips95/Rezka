@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
+import ServiceWorksSection from "@/components/ServiceWorksSection";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -32,8 +33,11 @@ export default function TentovyePergolyPage() {
       <PageHeader
         title="Тентовые перголы"
         subtitle="Алюминиевые перголы с тентовым покрытием для террас, беседок и летних площадок. Ткань SIOEN, автоматика Somfy."
+        backgroundImage="/images/works/bioclimatic-pergola/3 (4).jpg"
         breadcrumbs={[{ label: "Главная", href: "/" }, { label: "Направления", href: "/uslugi" }, { label: "Тентовые перголы" }]}
       />
+
+      <ServiceWorksSection folder="bioclimatic-pergola" title="Тентовые перголы" />
 
       <section className="py-14 bg-transparent">
         <div className="max-w-7xl mx-auto px-6">
