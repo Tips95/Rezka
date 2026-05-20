@@ -34,7 +34,7 @@ export default function BioklimaticPage() {
       <PageHeader
         title="Биоклиматические перголы"
         subtitle="Моторизованные ламельные перголы с автоматическим управлением климатом, датчиками и LED-подсветкой."
-        backgroundImage="/images/works/bioclimatic-pergola/3 (5).jpg"
+        backgroundImage="/images/optimized/banner-bioclim.webp"
         breadcrumbs={[{ label: "Главная", href: "/" }, { label: "Направления", href: "/uslugi" }, { label: "Биоклиматические перголы" }]}
       />
 

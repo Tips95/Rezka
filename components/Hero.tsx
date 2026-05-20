@@ -60,7 +60,7 @@ export default function Hero() {
 
             <div className="mt-10 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
               <p className="text-base md:text-xl font-semibold text-white/92">
-                Проект под ключ за 14 дней. Собственное производство под контролем Rezka
+                Проект под ключ за 14 дней. Собственное производство под контролем GLASSEYES
               </p>
 
               <div className="self-start sm:self-auto rounded-2xl bg-[#f7bf19]/92 text-zinc-900 px-6 py-5 min-w-[210px] shadow-xl">

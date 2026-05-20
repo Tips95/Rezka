@@ -33,7 +33,7 @@ export default function PanoramnyeDveriPage() {
       <PageHeader
         title="Панорамные двери"
         subtitle="Складные и раздвижные панорамные алюминиевые двери. Открывают пространство на всю ширину проёма."
-        backgroundImage="/images/works/gilotinnoe-osteklenie/Cedrus-Gallery9.jpg"
+        backgroundImage="/images/optimized/banner-doors.webp"
         breadcrumbs={[{ label: "Главная", href: "/" }, { label: "Направления", href: "/uslugi" }, { label: "Панорамные двери" }]}
       />
 

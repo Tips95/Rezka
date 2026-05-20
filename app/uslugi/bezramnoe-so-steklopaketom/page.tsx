@@ -33,7 +33,7 @@ export default function BezramnoeSteklopaketPage() {
       <PageHeader
         title="Безрамное остекление со стеклопакетом"
         subtitle="Сочетание эстетики безрамных систем и теплоизоляционных свойств стеклопакета. Для балконов и террас."
-        backgroundImage="/images/works/bezramnoe-osteklenie/Slade Lux3.jpeg"
+        backgroundImage="/images/optimized/banner-steklopaket.webp"
         breadcrumbs={[{ label: "Главная", href: "/" }, { label: "Направления", href: "/uslugi" }, { label: "Безрамное со стеклопакетом" }]}
       />
 

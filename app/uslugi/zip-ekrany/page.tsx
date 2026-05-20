@@ -33,7 +33,7 @@ export default function ZipEkranyPage() {
       <PageHeader
         title="ZIP-экраны"
         subtitle="Внешние рулонные шторы ZIP с боковыми направляющими. Защита от солнца, ветра и насекомых. Автоматика Somfy."
-        backgroundImage="/images/works/zip-ekrany/zip10.jpg"
+        backgroundImage="/images/optimized/banner-zip.webp"
         breadcrumbs={[{ label: "Главная", href: "/" }, { label: "Направления", href: "/uslugi" }, { label: "ZIP-экраны" }]}
       />
 

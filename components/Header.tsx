@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Phone, Clock, Menu, X, ChevronDown } from "lucide-react";
 
@@ -81,12 +82,16 @@ export default function Header() {
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2.5 shrink-0">
-            <div className="w-9 h-9 bg-zinc-900 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xs tracking-tight">AL</span>
-            </div>
+            <Image
+              src="/images/brand/glasseyes-logo.png"
+              alt="GLASSEYES"
+              width={36}
+              height={36}
+              className="w-9 h-9 rounded-md object-cover"
+            />
             <div className="leading-none">
-              <span className="font-bold text-zinc-900 text-[15px] tracking-tight block">Rezka Premium</span>
-              <span className="text-[10px] text-zinc-500 tracking-wide">Перголы и остекление под ключ</span>
+              <span className="font-bold text-zinc-900 text-[15px] tracking-tight block">GLASSEYES</span>
+              <span className="text-[10px] text-zinc-500 tracking-wide">Стекла и зеркала</span>
             </div>
           </Link>
 

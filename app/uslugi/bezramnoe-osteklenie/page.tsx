@@ -33,7 +33,7 @@ export default function BezramnoePage() {
       <PageHeader
         title="Безрамное остекление"
         subtitle="Раздвижные стеклянные панели без рамы для балконов, террас и беседок. Скрытый дренаж, максимум света."
-        backgroundImage="/images/works/bezramnoe-osteklenie/hd_8d6a3ee68ac991e39f0d58c47e631ce1_65ba707b1545e.jpg"
+        backgroundImage="/images/optimized/banner-bezram.webp"
         breadcrumbs={[{ label: "Главная", href: "/" }, { label: "Направления", href: "/uslugi" }, { label: "Безрамное остекление" }]}
       />
 

@@ -33,7 +33,7 @@ export default function TentovyePergolyPage() {
       <PageHeader
         title="Тентовые перголы"
         subtitle="Алюминиевые перголы с тентовым покрытием для террас, беседок и летних площадок. Ткань SIOEN, автоматика Somfy."
-        backgroundImage="/images/works/bioclimatic-pergola/3 (4).jpg"
+        backgroundImage="/images/optimized/banner-tent.webp"
         breadcrumbs={[{ label: "Главная", href: "/" }, { label: "Направления", href: "/uslugi" }, { label: "Тентовые перголы" }]}
       />
 

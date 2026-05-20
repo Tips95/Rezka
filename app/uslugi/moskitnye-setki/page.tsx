@@ -33,7 +33,7 @@ export default function MoskitnyeSetkaPage() {
       <PageHeader
         title="Москитные сетки плиссе"
         subtitle="Плиссированные москитные сетки на алюминиевой раме для окон, дверей и нестандартных проёмов."
-        backgroundImage="/images/works/setki-plisse/image-30-04-26-03-01-3.jpeg"
+        backgroundImage="/images/optimized/banner-setki.webp"
         breadcrumbs={[{ label: "Главная", href: "/" }, { label: "Направления", href: "/uslugi" }, { label: "Москитные сетки плиссе" }]}
       />
 

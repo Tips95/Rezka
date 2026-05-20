@@ -1,14 +1,24 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Tent, Wind, Leaf, GlassWater, Layers, PanelTop, DoorOpen, Bug, Shield } from "lucide-react";
+import { ArrowRight, Tent, Wind, Leaf, GlassWater, Layers, PanelTop, DoorOpen, Bug, Shield, Flame, Phone } from "lucide-react";
 
 const services = [
+  {
+    icon: Flame,
+    title: "Закалка стекла",
+    desc: "Профессиональная закалка стекла для дверей, перегородок, фасадов и мебели. Быстрое изготовление по вашим размерам.",
+    href: "/kontakty",
+    image: "/images/optimized/card-zakalka.webp",
+    tags: ["Закаленное стекло", "Под заказ", "Срочно"],
+    phone: "+7 938 896-40-00",
+    featured: true,
+  },
   {
     icon: Tent,
     title: "Тентовые перголы",
     desc: "Алюминиевые перголы с тентовым покрытием для террас и летних площадок.",
     href: "/uslugi/tentovye-pergoly",
-    image: "/images/works/bioclimatic-pergola/3 (2).jpg",
+    image: "/images/optimized/card-tent.webp",
     tags: ["Ткань SIOEN", "Somfy", "Под ключ"],
   },
   {
@@ -24,7 +34,7 @@ const services = [
     title: "Зимние сады",
     desc: "Светопрозрачные алюминиевые конструкции для круглогодичного использования.",
     href: "/uslugi/zimnie-sady",
-    image: "/images/works/zimnie-sady/image-30-04-26-02-41-1.jpeg",
+    image: "/images/optimized/banner-zimnie.webp",
     tags: ["Тёплые", "Круглый год", "Стеклопакет"],
   },
   {
@@ -40,7 +50,7 @@ const services = [
     title: "Безрамное со стеклопакетом",
     desc: "Безрамное остекление с тёплым стеклопакетом и высокой теплоизоляцией.",
     href: "/uslugi/bezramnoe-so-steklopaketom",
-    image: "/images/works/bezramnoe-osteklenie/Slade Lux3.jpeg",
+    image: "/images/optimized/banner-steklopaket.webp",
     tags: ["Терморазрыв", "Тёплое", "Эстетика"],
   },
   {
@@ -48,7 +58,7 @@ const services = [
     title: "Гильотинное остекление",
     desc: "Подъёмное остекление с терморазрывом для ресторанов и отелей.",
     href: "/uslugi/gilotinnoe-osteklenie",
-    image: "/images/works/gilotinnoe-osteklenie/hd_22faef42572bba7e56eab528f1bac793_65c0c20ef2882.jpg",
+    image: "/images/optimized/banner-gilotina.webp",
     tags: ["Подъёмное", "Бизнес", "Somfy"],
   },
   {
@@ -56,7 +66,7 @@ const services = [
     title: "Панорамные двери",
     desc: "Складные и раздвижные двери, открывающие проём на всю ширину.",
     href: "/uslugi/panoramnye-dveri",
-    image: "/images/works/gilotinnoe-osteklenie/Cedrus-Gallery9.jpg",
+    image: "/images/optimized/banner-doors.webp",
     tags: ["Раздвижные", "Складные", "Панорама"],
   },
   {
@@ -64,7 +74,7 @@ const services = [
     title: "Москитные сетки плиссе",
     desc: "Плиссированные сетки на алюминиевой раме для окон и дверей.",
     href: "/uslugi/moskitnye-setki",
-    image: "/images/works/setki-plisse/image-30-04-26-03-01-2.jpeg",
+    image: "/images/optimized/card-setki.webp",
     tags: ["Плиссе", "Нестандарт", "Лёгкий монтаж"],
   },
   {
@@ -103,7 +113,9 @@ export default function ServicesOverview() {
               <Link
                 key={service.title}
                 href={service.href}
-                className="group rounded-2xl border border-zinc-200 overflow-hidden hover:shadow-[0_14px_34px_rgba(15,23,42,0.12)] transition-all bg-white"
+                className={`group rounded-2xl border overflow-hidden hover:shadow-[0_14px_34px_rgba(15,23,42,0.12)] transition-all bg-white ${
+                  service.featured ? "border-amber-300 ring-2 ring-amber-200/80" : "border-zinc-200"
+                }`}
               >
                 <div className="relative aspect-[16/10]">
                   <Image
@@ -124,6 +136,12 @@ export default function ServicesOverview() {
                     {service.title}
                   </h3>
                   <p className="text-sm text-zinc-600 leading-relaxed mb-4">{service.desc}</p>
+                  {service.phone && (
+                    <span className="inline-flex items-center gap-1.5 text-sm font-bold text-zinc-900 bg-amber-50 border border-amber-200 rounded-full px-3 py-1.5 mb-4">
+                      <Phone size={14} />
+                      {service.phone}
+                    </span>
+                  )}
                   <div className="flex flex-wrap gap-2">
                     {service.tags.map((tag) => (
                       <span key={tag} className="text-xs bg-zinc-100 border border-zinc-200 text-zinc-600 px-2.5 py-1 rounded-full">

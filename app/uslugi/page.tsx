@@ -4,7 +4,7 @@ import Image from "next/image";
 import { ArrowRight, Tent, Wind, Leaf, GlassWater, Layers, PanelTop, DoorOpen, Bug, Shield } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Наши направления — Rezka Premium",
+  title: "Наши направления — GLASSEYES",
   description: "Тентовые и биоклиматические перголы, зимние сады, безрамное и гильотинное остекление, панорамные двери, ZIP-экраны и москитные сетки.",
 };
 
@@ -15,7 +15,7 @@ const services = [
     desc: "Алюминиевые перголы с тентовым покрытием для террас, беседок и летних площадок. Ткань SIOEN (Бельгия). Защита от солнца и осадков.",
     tags: ["Алюминий", "Ткань SIOEN", "Автоматика Somfy", "Частные дома", "Рестораны"],
     href: "/uslugi/tentovye-pergoly",
-    image: "/images/works/bioclimatic-pergola/3 (2).jpg",
+    image: "/images/optimized/card-tent.webp",
   },
   {
     icon: Wind,
@@ -31,7 +31,7 @@ const services = [
     desc: "Светопрозрачные алюминиевые конструкции для круглогодичного использования. Вертикальное и наклонное остекление, системы отопления.",
     tags: ["Круглогодичные", "Теплоизоляция", "Вертикальное", "Наклонное", "Отопление"],
     href: "/uslugi/zimnie-sady",
-    image: "/images/works/zimnie-sady/image-30-04-26-02-41-1.jpeg",
+    image: "/images/optimized/banner-zimnie.webp",
   },
   {
     icon: GlassWater,
@@ -47,7 +47,7 @@ const services = [
     desc: "Безрамное остекление с тёплым стеклопакетом — повышенная теплоизоляция при сохранении открытой эстетики.",
     tags: ["Стеклопакет", "Теплоизоляция", "Балконы", "Терморазрыв"],
     href: "/uslugi/bezramnoe-so-steklopaketom",
-    image: "/images/works/bezramnoe-osteklenie/Slade Lux3.jpeg",
+    image: "/images/optimized/banner-steklopaket.webp",
   },
   {
     icon: PanelTop,
@@ -55,7 +55,7 @@ const services = [
     desc: "Подъёмное гильотинное остекление ALDU с терморазрывом. Для ресторанов, кафе и отелей. Автоматика Somfy.",
     tags: ["Подъёмное", "Гильотинное", "Терморазрыв", "Рестораны", "Отели"],
     href: "/uslugi/gilotinnoe-osteklenie",
-    image: "/images/works/gilotinnoe-osteklenie/hd_22faef42572bba7e56eab528f1bac793_65c0c20ef2882.jpg",
+    image: "/images/optimized/banner-gilotina.webp",
   },
   {
     icon: DoorOpen,
@@ -63,7 +63,7 @@ const services = [
     desc: "Складные и раздвижные панорамные алюминиевые двери. Открывают пространство на всю ширину проёма без ограничений.",
     tags: ["Складные", "Раздвижные", "Алюминий", "Панорамные", "Широкий проём"],
     href: "/uslugi/panoramnye-dveri",
-    image: "/images/works/gilotinnoe-osteklenie/Cedrus-Gallery9.jpg",
+    image: "/images/optimized/banner-doors.webp",
   },
   {
     icon: Bug,
@@ -71,7 +71,7 @@ const services = [
     desc: "Плиссированные москитные сетки на алюминиевой раме. Для окон, дверей и нестандартных проёмов. Лёгкий монтаж.",
     tags: ["Плиссе", "Алюминий", "Окна", "Двери", "Нестандартные проёмы"],
     href: "/uslugi/moskitnye-setki",
-    image: "/images/works/setki-plisse/image-30-04-26-03-01-2.jpeg",
+    image: "/images/optimized/card-setki.webp",
   },
   {
     icon: Shield,

@@ -27,8 +27,8 @@ const scenarios = [
     images: [
       "/images/optimized/hero-bg.webp",
       "/images/optimized/scenario-cafe-thumb.webp",
-      "/images/works/bioclimatic-pergola/3 (5).jpg",
-      "/images/works/gilotinnoe-osteklenie/IMG_4498.PNG",
+      "/images/optimized/banner-bioclim.webp",
+      "/images/optimized/banner-gilotina.webp",
     ],
     href: "/uslugi/bioklimaticheskie-pergoly",
   },
@@ -39,9 +39,9 @@ const scenarios = [
     desc: "Уникальные проекты из алюминия под ключ для повышения статуса и привлекательности вашего комплекса.",
     images: [
       "/images/optimized/scenario-hotel-main.webp",
-      "/images/works/zip-ekrany/zip10.jpg",
-      "/images/works/zimnie-sady/image-30-04-26-02-41.jpeg",
-      "/images/works/gilotinnoe-osteklenie/Cedrus-Gallery9.jpg",
+      "/images/optimized/banner-zip.webp",
+      "/images/optimized/banner-zimnie.webp",
+      "/images/optimized/banner-doors.webp",
     ],
     href: "/uslugi/zip-ekrany",
   },

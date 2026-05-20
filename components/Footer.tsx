@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, Mail, MapPin } from "lucide-react";
 
 const navDirections = [
@@ -32,30 +33,52 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2.5 mb-5">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xs tracking-tight">БО</span>
-              </div>
+              <Image
+                src="/images/brand/glasseyes-logo.png"
+                alt="GLASSEYES"
+                width={36}
+                height={36}
+                className="w-9 h-9 rounded-md object-cover"
+              />
               <div className="leading-none">
-                <span className="font-bold text-white text-[15px] block">БезрамноеПро</span>
-                <span className="text-[10px] text-zinc-500 tracking-wide">Остекление под ключ</span>
+                <span className="font-bold text-white text-[15px] block">GLASSEYES</span>
+                <span className="text-[10px] text-zinc-500 tracking-wide">Стекла и зеркала</span>
               </div>
             </Link>
             <p className="text-sm leading-relaxed mb-6">
-              Алюминиевые перголы, зимние сады и панорамное остекление под ключ. Собственное производство с 2012 года.
+              Производство и обработка стекла: закалка, резка, остекление и зеркала для дома и бизнеса.
             </p>
             <div className="space-y-3">
               <a href="tel:+74951085560" className="flex items-center gap-2 text-sm hover:text-white transition-colors">
                 <Phone size={14} />
                 +7 495 108-55-60
               </a>
-              <a href="mailto:info@alyu-pro.ru" className="flex items-center gap-2 text-sm hover:text-white transition-colors">
+              <a href="mailto:mohmad_592@mail.ru" className="flex items-center gap-2 text-sm hover:text-white transition-colors">
                 <Mail size={14} />
-                info@alyu-pro.ru
+                mohmad_592@mail.ru
               </a>
               <div className="flex items-start gap-2 text-sm">
                 <MapPin size={14} className="mt-0.5 shrink-0" />
                 <span>г. Москва, ул. Колонцова, д. 5, стр. 2, офис 816</span>
               </div>
+            </div>
+            <div className="mt-6 flex items-center gap-4 text-xs">
+              <a
+                href="https://www.instagram.com/okonny_kontinent?igsh=MXBkaDFnbGFsb3k2NQ%3D%3D&utm_source=qr"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-white transition-colors"
+              >
+                Instagram
+              </a>
+              <a
+                href="https://www.tiktok.com/@okonny_kontinent?_r=1&_t=ZS-96PG5ReGopI"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-white transition-colors"
+              >
+                TikTok
+              </a>
             </div>
           </div>
 
@@ -102,7 +125,7 @@ export default function Footer() {
 
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-zinc-600 relative">
-          <p>© 2012–2026 БезрамноеПро. Все права защищены.</p>
+          <p>© 2012–2026 GLASSEYES. Все права защищены.</p>
           <div className="flex items-center gap-5">
             <Link href="#" className="hover:text-zinc-400 transition-colors">Политика конфиденциальности</Link>
           </div>

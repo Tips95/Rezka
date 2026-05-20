@@ -33,7 +33,7 @@ export default function ZimnieSadyPage() {
       <PageHeader
         title="Зимние сады"
         subtitle="Светопрозрачные алюминиевые конструкции для круглогодичного использования с тёплым профилем и стеклопакетами."
-        backgroundImage="/images/works/zimnie-sady/image-30-04-26-02-41-1.jpeg"
+        backgroundImage="/images/optimized/banner-zimnie.webp"
         breadcrumbs={[{ label: "Главная", href: "/" }, { label: "Направления", href: "/uslugi" }, { label: "Зимние сады" }]}
       />
 
