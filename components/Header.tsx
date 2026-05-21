@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Phone, Clock, Menu, X, ChevronDown } from "lucide-react";
+import { Phone, Clock, Menu, X, ChevronDown, MessageCircle } from "lucide-react";
 
 const directions = [
   { label: "Тентовые перголы", href: "/uslugi/tentovye-pergoly" },
@@ -56,11 +56,30 @@ export default function Header() {
     <>
       <div className="bg-white border-b border-zinc-200 text-sm">
         <div className="max-w-7xl mx-auto px-6 py-2.5 flex items-center justify-between gap-4 flex-wrap text-zinc-600">
-          <div className="flex items-center gap-6">
-            <a href="tel:+74951085560" className="flex items-center gap-1.5 text-zinc-700 hover:text-zinc-900 transition-colors">
-              <Phone size={13} />
-              <span className="font-medium">+7 (495) 108-55-60</span>
-            </a>
+          <div className="flex items-center gap-4 flex-wrap">
+            {[
+              { raw: "89282396666", label: "8 (928) 239-66-66" },
+              { raw: "89287897113", label: "8 (928) 789-71-13" },
+            ].map((n) => {
+              const wa = `7${n.raw.slice(1)}`;
+              return (
+                <div key={n.raw} className="flex items-center gap-1.5">
+                  <a href={`tel:+${wa}`} className="flex items-center gap-1 text-zinc-700 hover:text-zinc-900 transition-colors">
+                    <Phone size={13} />
+                    <span className="font-medium">{n.label}</span>
+                  </a>
+                  <a
+                    href={`https://wa.me/${wa}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`WhatsApp ${n.label}`}
+                    className="text-emerald-600 hover:text-emerald-700 transition-colors"
+                  >
+                    <MessageCircle size={14} />
+                  </a>
+                </div>
+              );
+            })}
             <span className="hidden sm:flex items-center gap-1.5">
               <Clock size={13} />
               Приём заявок 24/7

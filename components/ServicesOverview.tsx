@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Tent, Wind, Leaf, GlassWater, Layers, PanelTop, DoorOpen, Bug, Shield, Flame, Phone } from "lucide-react";
+import { ArrowRight, Tent, Wind, Leaf, GlassWater, Layers, PanelTop, DoorOpen, Bug, Shield, Flame, Phone, MessageCircle } from "lucide-react";
 
 const services = [
   {
@@ -10,7 +10,7 @@ const services = [
     href: "/kontakty",
     image: "/images/optimized/card-zakalka.webp",
     tags: ["Закаленное стекло", "Под заказ", "Срочно"],
-    phone: "+7 938 896-40-00",
+    phones: ["89388924000", "89388918008"],
     featured: true,
   },
   {
@@ -110,9 +110,8 @@ export default function ServicesOverview() {
           {services.map((service) => {
             const Icon = service.icon;
             return (
-              <Link
+              <article
                 key={service.title}
-                href={service.href}
                 className={`group rounded-2xl border overflow-hidden hover:shadow-[0_14px_34px_rgba(15,23,42,0.12)] transition-all bg-white ${
                   service.featured ? "border-amber-300 ring-2 ring-amber-200/80" : "border-zinc-200"
                 }`}
@@ -136,11 +135,37 @@ export default function ServicesOverview() {
                     {service.title}
                   </h3>
                   <p className="text-sm text-zinc-600 leading-relaxed mb-4">{service.desc}</p>
-                  {service.phone && (
-                    <span className="inline-flex items-center gap-1.5 text-sm font-bold text-zinc-900 bg-amber-50 border border-amber-200 rounded-full px-3 py-1.5 mb-4">
-                      <Phone size={14} />
-                      {service.phone}
-                    </span>
+                  {service.phones && (
+                    <div className="mb-4 space-y-2">
+                      {service.phones.map((raw) => {
+                        const normalized = raw.replace(/\D/g, "");
+                        const wa = normalized.startsWith("8") ? `7${normalized.slice(1)}` : normalized;
+                        return (
+                          <div key={raw} className="flex flex-wrap items-center gap-2">
+                            <span className="inline-flex items-center gap-1.5 text-sm font-bold text-zinc-900 bg-amber-50 border border-amber-200 rounded-full px-3 py-1.5">
+                              <Phone size={14} />
+                              {raw}
+                            </span>
+                            <a
+                              href={`tel:+${wa}`}
+                              className="inline-flex items-center gap-1 rounded-full border border-zinc-300 px-2.5 py-1 text-xs font-semibold text-zinc-700 hover:bg-zinc-100 transition-colors"
+                            >
+                              <Phone size={12} />
+                              Позвонить
+                            </a>
+                            <a
+                              href={`https://wa.me/${wa}`}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="inline-flex items-center gap-1 rounded-full border border-emerald-300 bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-700 hover:bg-emerald-100 transition-colors"
+                            >
+                              <MessageCircle size={12} />
+                              WhatsApp
+                            </a>
+                          </div>
+                        );
+                      })}
+                    </div>
                   )}
                   <div className="flex flex-wrap gap-2">
                     {service.tags.map((tag) => (
@@ -149,11 +174,11 @@ export default function ServicesOverview() {
                       </span>
                     ))}
                   </div>
-                  <span className="text-xs text-zinc-500 group-hover:text-zinc-900 transition-colors flex items-center gap-1 mt-4 font-semibold">
+                  <Link href={service.href} className="text-xs text-zinc-500 group-hover:text-zinc-900 transition-colors inline-flex items-center gap-1 mt-4 font-semibold">
                     Подробнее <ArrowRight size={11} />
-                  </span>
+                  </Link>
                 </div>
-              </Link>
+              </article>
             );
           })}
         </div>

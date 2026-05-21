@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Phone, Zap, Star } from "lucide-react";
+import { ArrowRight, Phone, Zap, Star, MessageCircle } from "lucide-react";
 
 const perks = [
   { icon: Star, label: "Бесплатный 3D-проект", color: "text-amber-400" },
@@ -38,13 +38,34 @@ export default function HomeCTA() {
               Оставить заявку
               <ArrowRight size={16} />
             </Link>
-            <a
-              href="tel:+74951085560"
-              className="inline-flex items-center justify-center gap-2 border border-zinc-300 text-zinc-800 font-semibold px-8 py-4 rounded-full hover:bg-zinc-100 transition-colors text-base"
-            >
-              <Phone size={15} />
-              +7 495 108-55-60
-            </a>
+            <div className="flex flex-col sm:flex-row gap-2">
+              {[
+                { raw: "89282396666", label: "8 928 239-66-66" },
+                { raw: "89287897113", label: "8 928 789-71-13" },
+              ].map((n) => {
+                const wa = `7${n.raw.slice(1)}`;
+                return (
+                  <div key={n.raw} className="inline-flex items-center gap-2">
+                    <a
+                      href={`tel:+${wa}`}
+                      className="inline-flex items-center justify-center gap-2 border border-zinc-300 text-zinc-800 font-semibold px-5 py-4 rounded-full hover:bg-zinc-100 transition-colors text-base"
+                    >
+                      <Phone size={15} />
+                      {n.label}
+                    </a>
+                    <a
+                      href={`https://wa.me/${wa}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center justify-center w-12 h-12 rounded-full border border-emerald-300 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 transition-colors"
+                      aria-label={`WhatsApp ${n.label}`}
+                    >
+                      <MessageCircle size={17} />
+                    </a>
+                  </div>
+                );
+              })}
+            </div>
           </div>
 
           <div className="mt-12 pt-8 border-t border-zinc-200 grid grid-cols-2 sm:grid-cols-3 gap-6">

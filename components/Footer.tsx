@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 
 const navDirections = [
   { label: "Тентовые перголы", href: "/uslugi/tentovye-pergoly" },
@@ -49,17 +49,36 @@ export default function Footer() {
               Производство и обработка стекла: закалка, резка, остекление и зеркала для дома и бизнеса.
             </p>
             <div className="space-y-3">
-              <a href="tel:+74951085560" className="flex items-center gap-2 text-sm hover:text-white transition-colors">
-                <Phone size={14} />
-                +7 495 108-55-60
-              </a>
+              {[
+                { raw: "89282396666", label: "8 928 239-66-66" },
+                { raw: "89287897113", label: "8 928 789-71-13" },
+              ].map((n) => {
+                const wa = `7${n.raw.slice(1)}`;
+                return (
+                  <div key={n.raw} className="flex items-center gap-2 text-sm">
+                    <a href={`tel:+${wa}`} className="inline-flex items-center gap-1.5 hover:text-white transition-colors">
+                      <Phone size={14} />
+                      {n.label}
+                    </a>
+                    <a
+                      href={`https://wa.me/${wa}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-emerald-500 hover:text-emerald-400 transition-colors"
+                      aria-label={`WhatsApp ${n.label}`}
+                    >
+                      <MessageCircle size={14} />
+                    </a>
+                  </div>
+                );
+              })}
               <a href="mailto:mohmad_592@mail.ru" className="flex items-center gap-2 text-sm hover:text-white transition-colors">
                 <Mail size={14} />
                 mohmad_592@mail.ru
               </a>
               <div className="flex items-start gap-2 text-sm">
                 <MapPin size={14} className="mt-0.5 shrink-0" />
-                <span>г. Москва, ул. Колонцова, д. 5, стр. 2, офис 816</span>
+                <span>г. Грозный, ул. Молдавская 13</span>
               </div>
             </div>
             <div className="mt-6 flex items-center gap-4 text-xs">
