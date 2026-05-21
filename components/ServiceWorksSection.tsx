@@ -9,17 +9,37 @@ type Props = {
 };
 
 async function loadImages(folder: string): Promise<string[]> {
+  const thumbsPath = join(process.cwd(), "public", "images", "works", "thumbs", folder);
   const folderPath = join(process.cwd(), "public", "images", "works", folder);
 
   try {
+    const thumbEntries = await readdir(thumbsPath, { withFileTypes: true });
+    const thumbs = thumbEntries
+      .filter((e) => e.isFile())
+      .map((e) => e.name)
+      .filter((name) => /\.(jpg|jpeg|png|webp)$/i.test(name))
+      .sort((a, b) => a.localeCompare(b))
+      .slice(0, 9)
+      .map((name) => `/images/works/thumbs/${folder}/${name}`);
+
+    if (thumbs.length > 0) {
+      return thumbs;
+    }
+  } catch {
+    // Fallback to original images when thumbs are unavailable.
+  }
+
+  try {
     const entries = await readdir(folderPath, { withFileTypes: true });
-    return entries
+    const originals = entries
       .filter((e) => e.isFile())
       .map((e) => e.name)
       .filter((name) => /\.(jpg|jpeg|png|webp)$/i.test(name))
       .sort((a, b) => a.localeCompare(b))
       .slice(0, 9)
       .map((name) => `/images/works/${folder}/${name}`);
+
+    return originals;
   } catch {
     return [];
   }
